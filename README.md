@@ -1,7 +1,8 @@
 # Brat-741
 Brat-741
 
-Besim Arnautović
-Rijad Muminović
-Amar Čivgin
-Tarik Pljevljaković
+Članovi Tima:
+1. Besim Arnautović
+2. Rijad Muminović
+3. Amar Čivgin
+4. Tarik Pljevljaković

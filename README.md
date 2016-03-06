@@ -65,4 +65,4 @@ Pristup bazi podataka nije neograničen za ostale aktere, i postoje nivoi pristu
   * Direktor operacija
 * Eksterni akteri
   * Vojni organi
-  * Druge agencij
+  * Druge agencije

@@ -60,7 +60,7 @@ pristup ima samo Direktor agencije.
 
 #### **Funkcionalnosti**
 
-* [ x ] Sve je enkriptovano
+* [x] Sve je enkriptovano
 * Različiti nivoi pristupa bazi podataka
 * Modul za kontaktiranje agencije
 * Modul za logiranje zaposlenika agencije

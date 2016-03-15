@@ -26,9 +26,9 @@ Ova poruka će se samouništiti nakon 1.5 godina.
 ###### **Kreiranje misije**
 
 Klijent kreira zahtjev za špijuniranjem mete, ometanje rada, rušenje vlade
-(Klijent K -> Direktor M). Zahtjev razmatra Direktor nakon konsultacije sa Direktorima sektora
-i može ga ili odobriti ili odbiti. Nakon toga Direktor operacija i Direktor administracije
-kreiraju misiju, što uključuje formiranje radne grupe, dodjeljivanje opreme, specifikacija cilja.
+(Klijent K -> Direktor M). Zahtjev razmatra Direktor nakon konsultacije sa Menadžerom sektora
+i može ga ili odobriti ili odbiti. Nakon toga Menadžer kreira misiju, što uključuje formiranje 
+radne grupe, dodjeljivanje opreme, specifikacija cilja.
 
 ###### **Regrutovanje novih agenata**
 
@@ -39,17 +39,17 @@ privremeno ili za stalno.
 
 Tokom trajanja same misije, tim operativaca koji može biti ili pojedinac ili grupa predvođena
 sa glavnim agentom, daje dnevni izvještaj o stanju misije, a samu misiju nadgleda
-Direktor operacija koji podnosi redovni izvještaj Direktoru agencije M. A ako dođe do
+Menadžer koji podnosi redovni izvještaj Direktoru agencije M. A ako dođe do
 neodložive sitaucije koja mora biti riješena, šalje se hitni izvještaj Direktoru agencije
 koji poduzima potrebne korake.
 
-Ukoliko dođe do potrebe da se misija otkaže, direktor može tražiti ekstrakciju agenata. (Tražeći
+Ukoliko dođe do potrebe da se misija otkaže, Direktor M može tražiti ekstrakciju agenata. (Tražeći
 pomoć od vojnih organa ili drugih prijateljskih organizacija)
 
 ###### **Održavanje i nabavka opreme**
 
 Nakon završetka misije, sva oštećena oprema ide na opravku, izgubljena se nadomješćuje, a sva
-ostala oprema se šalje na analizu koju nadgleda Direktor tehnologija. 
+ostala oprema se šalje na analizu koju nadgleda Menadžer. 
 
 ###### **Obrada prikupljenih informacija**
 
@@ -66,9 +66,9 @@ pristup ima samo Direktor agencije.
 * Modul za logiranje zaposlenika agencije
 * Modul za kreiranje misije
 * Modul za formiranje radne grupe
-* Modul za slanje izvještaja (Direktor sektora -> M)
+* Modul za slanje izvještaja (Menadžer -> M)
 * Modul za nadzor opreme
-* Modul za update informacija (Agent 00x -> Direktoru sektora)
+* Modul za update informacija (Agent 00x -> Menadžeru)
 * Modul za kontrolu misije
 * Regrutovanje novih agenata
 * Modul za pretragu baze podataka
@@ -79,16 +79,13 @@ pristup ima samo Direktor agencije.
 #### **Akteri**
 
 * Klijent (naručilac misije)
-  * Pravno lice (mogućnost naručivanja složenijih i obimnijih misija)
+  * Pravno lice (mogućnost naručivanja složenijih i obimnijih misija (VIP))
   * Fizičko lice
 * Operativci
   * Agenti (operativci nižeg ranga, primaju naredbe od Agenta 00x)
   * Agent 00x (vođe operativnih timova)
 * Direktor agencije M (veliki B.R.A.T.)
-* Direktori sektora (M-ovi pomoćnici, obezbjeđuju nesmetan rad agencije)
-  * Direktor tehnologija (zadužen za kontrolu opreme)
-  * Direktor administracija (zadužen za kontrolu agenata)
-  * Direktor operacija (zadužen za kontrolu tekućih misija)
+* Menadžer (obavlja sve poslove administracije i organizovanja misija)
 * Eksterni akteri (pozivaju se u slučaju ekstremnih situacija)
   * Vojni organi (pomažu pri nenadanoj ekstrakciji agenata)
   * Druge agencije (razmjena resursa)

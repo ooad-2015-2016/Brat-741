@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="$wizardcodebehindxmlns$.MainPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:$wizardcodebehindxmlns$"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="25,10,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Height="45" Width="395"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="50" Margin="115,65,0,0" TextWrapping="Wrap" Text="Login za uposlene" VerticalAlignment="Top" Width="205" FontSize="21.333"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="45" Margin="35,130,0,0" TextWrapping="Wrap" Text="Tajni Username" VerticalAlignment="Top" Width="110"/>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="35" Margin="35,170,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="175,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="20" Margin="175,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="40" Margin="140,225,0,0" VerticalAlignment="Top" Width="115" ClickMode="Press"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Center" Height="50" Margin="40,365,27,0" TextWrapping="Wrap" Text="Nadgledanje misije za klijente" VerticalAlignment="Top" Width="365" FontSize="21.333"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="45" Margin="35,465,0,0" TextWrapping="Wrap" Text="Tajni Username" VerticalAlignment="Top" Width="130"/>
+        <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="40" Margin="20,520,0,0" TextWrapping="Wrap" Text="Trenutno generisani kod" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="30" Margin="180,460,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="25" Margin="220,513,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="button1" Content="Nadgledaj" HorizontalAlignment="Left" Height="40" Margin="145,595,0,0" VerticalAlignment="Top" Width="115"/>
+        <HyperlinkButton Content="Link za predaju zahtjeva za misiju" HorizontalAlignment="Left" Margin="200,688,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="-10,740,-18,-27" VerticalAlignment="Top" Width="460"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="80" Margin="-20,-45,-18,0" VerticalAlignment="Top" Width="470"/>
+
+    </Grid>
+</Page>

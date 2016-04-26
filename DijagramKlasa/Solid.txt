@@ -1,7 +1,11 @@
 U ovom tekstu analiziramo da li je dijagram klase Špijunska Agencija ispunio SOLID principe.
 
 **1. Single Responsibility Principle:**
-
+    Princip pojedinačne odgovornosti je za sve klase ispunjen, budući da sve klase sadrže samo metode i parametre koje su im potrebne 
+  za neometano funckioniranje, i jer se nalazimo u još ranoj fazi razvoja, tj analize, gdje većina klasa još uvijek nije sastavljena 
+  tako da implementira funkcionalnosti kao što su: komuniciranje sa bazom podataka, pozivanje metoda drugih klasa, kreiranje nekih file-ova i slično. Što znači da sve klase imaju samo jedan razlog za promjenu.
+  
+  Naravno ono o čemu treba voditi računa u daljnjim fazama razvoje jeste očuvanje upravo ovog principa, kako bi sami sebi olakšali posao.
 **2. Open-Closed Principle:**
     Otvoreno-zatvoreni princip zasad nije narušen, jer posmatramo manje-više finalni oblik dijagrama klasa. Međutim, obratimo pažnju na
   moguću ranjivu tačku, kao što je naprimjer funkcija analizirajOpremu() u klasi Menadžer. Naime, pretpostavimo da smo dobili zahtjev da

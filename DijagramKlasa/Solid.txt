@@ -3,7 +3,7 @@ U ovom tekstu analiziramo da li je dijagram klase Špijunska Agencija ispunio SO
 **1. Single Responsibility Principle:**
 
 **2. Open-Closed Principle:**
-
+  Otvoreno-zatvoreni princip zasad nije narušen, jer posmatramo manje-više finalni oblik dijagrama klasa. Međutim, obratimo pažnju na moguću ranjivu tačku, kao što je naprimjer funkcija analizirajOpremu() u klasi Menadžer. Naime, pretpostavimo da smo dobili zahtjev da proširimo klasu Oprema na više vrsta opreme, tipa vojna oprema (oružja, koja dalje mogu biti podijeljena na velikog i malog kalibra), vozila (koja opet dalje mogu biti podijeljena na zračna, kopnena i vodena), generalna logistika itd. Brzi popravak ovakvog problema bi npr. uzrokovao da pravimo if uslov u funkciji analizirajOpremu, i taj if uslov bi postajao sve veći i veći kako se zahtjevi za proširenje klase Oprema budu gomilali. To znači da ova funkcija ipak nije zatvorena na modifikaciju, jer bismo je svaki put morali modifikovati nadogradnjom klase Oprema. Trajno rješenje ovog problema bi bilo da, primjera radi, klase izvedene iz klase Oprema imaju vlastite funkcije za generiranje izvještaja o opremi, dok bi funkcija analizirajOpremu() samo vršila interakciju s tim generiranim izvještajem, i tako bi postala otvorena na nadogradnju, a zatvorena na modifikaciju, tj. postala bi "otporna/imuna" na izvršene promjene u drugim klasama.
 **3. Liskov Substitution Principle:**
 
 **4. Interface Segregation Principle:**

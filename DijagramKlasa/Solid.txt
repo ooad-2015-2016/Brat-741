@@ -1,7 +1,7 @@
 U ovom tekstu analiziramo da li je dijagram klase Špijunska Agencija ispunio SOLID principe.
 
-1. Single Responsibility Principle:
-2. Open-Closed Principle:
-3. Liskov Substitution Principle:
-4. Interface Segregation Principle:
-5. Dependency Inversion Principle:
+## 1. Single Responsibility Principle:
+## 2. Open-Closed Principle:
+## 3. Liskov Substitution Principle:
+## 4. Interface Segregation Principle:
+## 5. Dependency Inversion Principle:

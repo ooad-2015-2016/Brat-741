@@ -3,9 +3,11 @@
 **1. Single Responsibility Principle:**
     Princip pojedinačne odgovornosti je za sve klase ispunjen, budući da sve klase sadrže samo metode i parametre koje su im potrebne 
   za neometano funckioniranje, i jer se nalazimo u još ranoj fazi razvoja, tj analize, gdje većina klasa još uvijek nije sastavljena 
-  tako da implementira funkcionalnosti kao što su: komuniciranje sa bazom podataka, pozivanje metoda drugih klasa, kreiranje nekih file-ova i slično. Što znači da sve klase imaju samo jedan razlog za promjenu.
+  tako da implementira funkcionalnosti kao što su: komuniciranje sa bazom podataka, pozivanje metoda drugih klasa, kreiranje nekih file-ova i slično.
+  Što znači da sve klase imaju samo jedan razlog za promjenu.
   
   Naravno ono o čemu treba voditi računa u daljnjim fazama razvoje jeste očuvanje upravo ovog principa, kako bi sami sebi olakšali posao.
+
 **2. Open-Closed Principle:**
     Otvoreno-zatvoreni princip zasad nije narušen, jer posmatramo manje-više finalni oblik dijagrama klasa. Međutim, obratimo pažnju na
   moguću ranjivu tačku, kao što je naprimjer funkcija analizirajOpremu() u klasi Menadžer. Naime, pretpostavimo da smo dobili zahtjev da
@@ -17,23 +19,31 @@
   vlastite funkcije za generiranje izvještaja o opremi, dok bi funkcija analizirajOpremu() samo vršila interakciju s tim generiranim
   izvještajem, i tako bi postala otvorena na nadogradnju, a zatvorena na modifikaciju, tj. postala bi "otporna/imuna" na izvršene
   promjene u drugim klasama.
+
 **3. Liskov Substitution Principle:**
-Liskov princip zamjene je ispunjen, iako imamo vrlo opasno nasljeđivanje i to Direktor je podtip Menadžera. Problemi bi ovdje nastali da Menadžer može vršiti operacije koje Direktoru nisu dopuštene, ali to nije slučaj. Neke operacije poput regrutujNovogAgenta() i kreirajMisiju(), će češće obavljati Menadžer, ali i Direktor mora imati njima pristup. Direktor se u svim operacijama gdje se ne traži pristup isključivo njega, može smatrati i Menadžerom. Malo jasnija slika ovoga se može kreirati ako bi umjesto Menadžer klase koristili npr. RadnikVisokogPristupa, pa naslijedili iz nje i Menadžera i Direktora, ali u našem dijagramu je to nepotrebno.
+    Liskov princip zamjene je ispunjen, iako imamo vrlo opasno nasljeđivanje i to Direktor je podtip Menadžera. Problemi bi ovdje nastali
+  da Menadžer može vršiti operacije koje Direktoru nisu dopuštene, ali to nije slučaj. Neke operacije poput regrutujNovogAgenta() i 
+  kreirajMisiju(), će češće obavljati Menadžer, ali i Direktor mora imati njima pristup. Direktor se u svim operacijama gdje se ne traži
+  pristup isključivo njega, može smatrati i Menadžerom. Malo jasnija slika ovoga se može kreirati ako bi umjesto Menadžer klase koristili
+  npr. RadnikVisokogPristupa, pa naslijedili iz nje i Menadžera i Direktora, ali u našem dijagramu je to nepotrebno.
 
-Što se tiče Agent00x, on je potpuno pravilno naslijeđen iz klase Agent, jer on samo ima dodatnu mogućnost podnošenja izvještaja i malo veći nivoPristupa, te se u potpunosti smatra Agentom u svim situacijama.
+  Što se tiče Agent00x, on je potpuno pravilno naslijeđen iz klase Agent, jer on samo ima dodatnu mogućnost podnošenja izvještaja i malo
+  veći nivoPristupa, te se u potpunosti smatra Agentom u svim situacijama.
 
-Uposlenik klasa je ključna i svaki uposlenik je nasljeđuje. Svakako da se u situaciji gdje se traže samo osnovni podaci uvijek može uposlenik zamijeniti ovom baznom klasom, plata je za svakoga definisana, danZaposljavanja, pa i ostali atributi.
+  Uposlenik klasa je ključna i svaki uposlenik je nasljeđuje. Svakako da se u situaciji gdje se traže samo osnovni podaci uvijek može uposlenik
+  zamijeniti ovom baznom klasom, plata je za svakoga definisana, danZaposljavanja, pa i ostali atributi.
 
-Kako ne bi bio narušen ovaj princip klase EksterniAkter i Klijent nisu naslijeđene iz klase Uposlenik, jer bi većina atributa morala da bude nedefinisana.
+  Kako ne bi bio narušen ovaj princip klase EksterniAkter i Klijent nisu naslijeđene iz klase Uposlenik, jer bi većina atributa morala da
+  bude nedefinisana.
 
-Finalni izvještaj ima formu običnog izvještaja s dodatkom da sadrži zaključak u kojem se piše početak i kraj misije, te njen finalni uspjeh, čime zadovoljava potrebe principa.
+  Finalni izvještaj ima formu običnog izvještaja s dodatkom da sadrži zaključak u kojem se piše početak i kraj misije, te njen finalni uspjeh,
+  čime zadovoljava potrebe principa.
+
 **4. Interface Segregation Principle:**
-	Interface Segregation Princip nije ispoštovan, jer klase Menadžer, Direktor i Contact bi trebali da budu povezane sa interface-ima.
-Npr. klasa Menadžer ima metodu regrutujNovogAgenta() trebala bi biti odvojena u zasebnom interface-u jer bi onda mnogo lakše bilo da
-Menadžer regrutuje nove agente i samo povezivanje i impementacija klase bila bi lakša. Tadođer isto vrijedi i za klase Direktor, koja ima
-definisanu metodu analizirajIzvještaj() bi trebala također biti interface, i klasa Klijent koja ima metodu kreirajMisiju() bilo bi mnogo 
-lakši pristup toj metodi ako bi se odvojila u zaseban interface.
-
+    Interface Segregation Princip nije ispoštovan, jer klase Menadžer, Direktor i Contact bi trebali da budu povezane sa interface-ima.
+  Npr. klasa Menadžer ima metodu regrutujNovogAgenta() trebala bi biti odvojena u zasebnom interface-u jer bi onda mnogo lakše bilo da
+  Menadžer regrutuje nove agente i samo povezivanje i impementacija klase bila bi lakša. Tadođer isto vrijedi i za klase Direktor, koja ima
+  definisanu metodu analizirajIzvještaj() bi trebala također biti interface, i klasa Klijent koja ima metodu kreirajMisiju() bilo bi mnogo 
+  lakši pristup toj metodi ako bi se odvojila u zaseban interface.
 
 **5. Dependency Inversion Principle:**
-	

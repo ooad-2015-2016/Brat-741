@@ -101,6 +101,20 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Agent.cs" />
+    <Compile Include="Models\Agent00x.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Direktor.cs" />
+    <Compile Include="Models\EksterniAkter.cs" />
+    <Compile Include="Models\FinalniIzvjestaj.cs" />
+    <Compile Include="Models\Izvjestaj.cs" />
+    <Compile Include="Models\Klijent.cs" />
+    <Compile Include="Models\Menadzer.cs" />
+    <Compile Include="Models\Meta.cs" />
+    <Compile Include="Models\Misija.cs" />
+    <Compile Include="Models\Oprema.cs" />
+    <Compile Include="Models\Tim.cs" />
+    <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,19 +138,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Zahtjev za kreiranje misije.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

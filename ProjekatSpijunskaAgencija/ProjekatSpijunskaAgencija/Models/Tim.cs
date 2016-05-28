@@ -9,9 +9,9 @@ namespace ProjekatSpijunskaAgencija.Models
     class Tim
     {
         private int brojClanova = 0;
-        private Agent[] clanovi;
+        private List<Agent> clanovi { get; set; }
         public int index00x { get; set; }
-        public Oprema[] resursi { get; set; }
+        public List<Oprema> resursi { get; set; }
 
         public void dodajAgenta(Agent noviAgent)
         {
@@ -25,10 +25,10 @@ namespace ProjekatSpijunskaAgencija.Models
             }
         }
 
-        public void izbaciAgenta(int idAgenta)
-        {
-            this.clanovi = this.clanovi.Where(w => w.idBroj != idAgenta).ToArray();
-            //pravi novi niz clanovi, koji je takav da ne sadrzi agente kojima se idBroj poklapa sa zadanim idAgenta
-        }
+        //public void izbaciAgenta(int idAgenta)
+        //{
+        //    this.clanovi = this.clanovi.Where<Agent>(k => k.idBroj == idAgenta);
+        //    //pravi novi niz clanovi, koji je takav da ne sadrzi agente kojima se idBroj poklapa sa zadanim idAgenta
+        //}
     }
 }

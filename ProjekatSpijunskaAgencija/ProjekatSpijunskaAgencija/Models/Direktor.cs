@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Direktor
+    class Direktor : Menadzer
     {
-        public void analizirajIzvjestaj(Izvjestaj izvjestaj)
-        {
-
-        }
 
         public void ekstrakcijaAgenta() { }
         public void kontaktirajVanjskeAktere() { }

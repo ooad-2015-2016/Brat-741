@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Izvjestaj
+    public class Izvjestaj
     {
         public DateTime datumKreiranja { get; set; }
         public float stanjeBudzeta { get; set; }

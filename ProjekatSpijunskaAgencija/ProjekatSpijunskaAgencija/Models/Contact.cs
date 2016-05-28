@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Contact
+    public class Contact
     {
-        public String naziv { get; set; }
+        public String ime { get; set; }
         public String email { get; set; }
         public String brojTel { get; set; }
         public String komentar { get; set; }

@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ProjekatSpijunskaAgencija.Models
 {
     public enum Fizikalnost { fizickoLice, pravnoLice }
-    class Klijent : Contact
+    class Klijent
     {
         public String pristupniKod { get; set; }
         public Misija misija { get; set; }
         public Fizikalnost fizikalnost { get; set; }
         public FinalniIzvjestaj izvjestaj { get; set; }
-
+        public Contact kontaktInfo { get; set; }
 
         public void ispisiStatus() { }
         public Misija kreirajMisiju()

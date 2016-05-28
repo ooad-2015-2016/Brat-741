@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class EksterniAkter : Contact
+    class EksterniAkter
     {
         public String dostupniResursi { get; set; }
+        public Contact kontaktInfo { get; set; }
 
         public void pozoviUPomoc(String razlog)
         {

@@ -29,10 +29,10 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             this.InitializeComponent();
             DataContext = new UposlenikViewModel();
-            NavigationCacheMode = NavigationCacheMode.Required;
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            //NavigationCacheMode = NavigationCacheMode.Required;
+            //var currentView = SystemNavigationManager.GetForCurrentView();
+            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -41,14 +41,14 @@ namespace ProjekatSpijunskaAgencija.Views
             DataContext = (UposlenikViewModel)e.Parameter;
         }
 
-        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                Frame.GoBack();
-                e.Handled = true;
-            }
-        }
+        //private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        //{
+        //    if (Frame.CanGoBack)
+        //    {
+        //        Frame.GoBack();
+        //        e.Handled = true;
+        //    }
+        //}
 
         protected override async void OnKeyUp(KeyRoutedEventArgs e)
         {

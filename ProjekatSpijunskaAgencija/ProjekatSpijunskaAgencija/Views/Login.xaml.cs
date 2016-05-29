@@ -9,6 +9,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -29,11 +30,24 @@ namespace ProjekatSpijunskaAgencija.Views
     {
         public object NotifyType { get; private set; }
 
+        private bool dialogOn { get; set; }
         public Login()
         {
             this.InitializeComponent();
             var data = new DataSourceSA();
+            //var currentView = SystemNavigationManager.GetForCurrentView();
+            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
+
+        //private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        //{
+        //    if (Frame.CanGoBack)
+        //    {
+        //        Frame.GoBack();
+        //        e.Handled = true;
+        //    }
+        //}
 
         private async void login_Click(object sender, RoutedEventArgs e)
         {
@@ -43,21 +57,30 @@ namespace ProjekatSpijunskaAgencija.Views
             Uposlenik uposlenik = DataSourceSA.dajUposlenika(username, password);
             if (uposlenik != null)
             {
-                MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj " + uposlenik.idBroj);
-                await dialog.ShowAsync();
-                this.Frame.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik));
+                if (!dialogOn)
+                {
+                    MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj " + uposlenik.idBroj);
+                    dialogOn = true;
+                    await dialog.ShowAsync();
+                    dialogOn = false;
+                    this.Frame.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik));
+                }
             }
             else
             {
-                MessageDialog dialog = new MessageDialog("Pogresni podaci, probajte ponovo ili se registrujte");
+                if (!dialogOn)
+                {
+                    MessageDialog dialog = new MessageDialog("Pogresni podaci, probajte ponovo ili se registrujte");
 
-                //Treba napraviti mogucnost da u samom dijalogu odabere mogucnost za registraciju.
-                //dialog.Commands.Add(new UICommand("Try again", new UICommandInvokedHandler(this.CommandInvokedHandler)));
-                //dialog.Commands.Add(new UICommand("Close",new UICommandInvokedHandler(this.CommandInvokedHandler)));
-                //dialog.DefaultCommandIndex = 0;
-                //dialog.CancelCommandIndex = 1;
-
-                await dialog.ShowAsync();
+                    //Treba napraviti mogucnost da u samom dijalogu odabere mogucnost za registraciju.
+                    dialog.Commands.Add(new UICommand("Try again"));
+                    //dialog.Commands.Add(new UICommand("Close"));
+                    dialog.DefaultCommandIndex = 0;
+                    //dialog.CancelCommandIndex = 1;
+                    dialogOn = true;
+                    await dialog.ShowAsync();
+                    dialogOn = false;
+                }
             }
         }
         private void register_Click(object sender, RoutedEventArgs e)

@@ -26,5 +26,10 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             this.InitializeComponent();
         }
+
+        private void keyDown(object sender, KeyRoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,6 +37,7 @@ namespace ProjekatSpijunskaAgencija.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            Loaded += delegate { Focus(FocusState.Programmatic); };
             DataContext = (UposlenikViewModel)e.Parameter;
         }
 
@@ -45,6 +47,18 @@ namespace ProjekatSpijunskaAgencija.Views
             {
                 Frame.GoBack();
                 e.Handled = true;
+            }
+        }
+
+        protected override async void OnKeyUp(KeyRoutedEventArgs e)
+        {
+            MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj ");
+            await dialog.ShowAsync();
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                MessageDialog did = new MessageDialog("Zdravo uposlenik broj ");
+                await did.ShowAsync();
+                this.Frame.GoBack();
             }
         }
     }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Meta
+    public class Meta
     {
         public int idBroj { get; set; }
-        public String lokacija { get; set; }
+        public string lokacija { get; set; }
         public Tim radnaGrupa { get; set; }
     }
 }

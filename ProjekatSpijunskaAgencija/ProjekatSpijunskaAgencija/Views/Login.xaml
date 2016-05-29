@@ -12,11 +12,11 @@
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="40" Margin="520,300,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
 
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="40" Margin="680,240,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="160" />
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="160" KeyDown="KeyDownPress"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="680,300,0,0" 
-                     VerticalAlignment="Top" Height="40" Width="160"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="40" Margin="720,360,0,0" VerticalAlignment="Top" Width="120" Click="button_Click"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="40" Margin="720,420,0,0" VerticalAlignment="Top" Width="120"/>
+                     VerticalAlignment="Top" Height="40" Width="160" KeyDown="KeyDownPress"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="40" Margin="720,360,0,0" VerticalAlignment="Top" Width="120" Click="login_Click"/>
+        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="40" Margin="720,420,0,0" VerticalAlignment="Top" Width="120" Click="register_Click"/>
 
 
     </Grid>

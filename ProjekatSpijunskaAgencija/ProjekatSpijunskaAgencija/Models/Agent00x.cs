@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Agent00x : Agent
+    public class Agent00x : Agent
     {
         public int x { get; set; }
         private Izvjestaj izvjestaj { get; set; }
-        
     }
 }

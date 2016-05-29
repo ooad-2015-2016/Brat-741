@@ -16,12 +16,24 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public INavigationService NavigationService { get; set; }
         public ICommand DodajUposlenika { get; set; }
 
-        public UposlenikViewModel()
+        #region Konstruktori, ukljucujuci i metodu Setup kako bi se izbjeglo suvisno ponavljanje
+        public void Setup()
         {
-            uposlenik = new Uposlenik();
             NavigationService = new NavigationService();
             DodajUposlenika = new RelayCommand<object>(dodajUposlenika, mozeLiSeDodatiUposlenik);
         }
+        public UposlenikViewModel()
+        {
+            uposlenik = new Uposlenik();
+            Setup();
+        }
+        public UposlenikViewModel(Uposlenik parameter) 
+        {
+            uposlenik = parameter;
+            Setup();
+        }
+        #endregion
+
         public bool mozeLiSeDodatiUposlenik(object parameter)
         {
             return true;

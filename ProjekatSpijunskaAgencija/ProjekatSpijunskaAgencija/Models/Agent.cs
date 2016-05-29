@@ -8,9 +8,9 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public enum statusAgenta { zauzet, slobodan }
 
-    class Agent : Uposlenik
+    public class Agent : Uposlenik
     {
         public statusAgenta status { get; set; }
-        public Oprema[] oprema { get; set; }
+        public List<Oprema> oprema { get; set; }
     }
 }

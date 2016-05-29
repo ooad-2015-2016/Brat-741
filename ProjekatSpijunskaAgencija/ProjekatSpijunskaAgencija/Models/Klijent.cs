@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ProjekatSpijunskaAgencija.Models
 {
     public enum Fizikalnost { fizickoLice, pravnoLice }
-    class Klijent
+    public class Klijent
     {
-        public String pristupniKod { get; set; }
+        public string pristupniKod { get; set; }
         public Misija misija { get; set; }
         public Fizikalnost fizikalnost { get; set; }
         public FinalniIzvjestaj izvjestaj { get; set; }

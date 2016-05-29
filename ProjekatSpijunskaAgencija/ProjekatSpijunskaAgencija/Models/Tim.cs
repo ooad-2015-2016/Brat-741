@@ -6,29 +6,49 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Tim
+    public class Tim
     {
-        private int brojClanova = 0;
-        private List<Agent> clanovi { get; set; }
+        private int brojClanova;
         public int index00x { get; set; }
+
+        private List<Agent> clanovi { get; set; }
         public List<Oprema> resursi { get; set; }
 
+        #region Dodavanja i uklanjanje oprema i agenata, dodajOpremu/Agenta, ukloniOpremu/Agenta
         public void dodajAgenta(Agent noviAgent)
         {
-            if (this.clanovi.Contains(noviAgent))
-            {
-                //URADI NESTO AKO AGENT VEC POSTOJI
-            }
-            else
-            {
-                this.clanovi[brojClanova++] = noviAgent;
-            }
+            if (!clanovi.Exists(k => k.idBroj == noviAgent.idBroj)) clanovi.Add(noviAgent);
         }
 
-        //public void izbaciAgenta(int idAgenta)
-        //{
-        //    this.clanovi = this.clanovi.Where<Agent>(k => k.idBroj == idAgenta);
-        //    //pravi novi niz clanovi, koji je takav da ne sadrzi agente kojima se idBroj poklapa sa zadanim idAgenta
-        //}
+        public void dodajOpremu(Oprema novaOprema)
+        {
+            if (!resursi.Exists(k => k.idBroj == novaOprema.idBroj)) resursi.Add(novaOprema);
+        }
+
+        public void ukloniOpremu(int idOpreme)
+        {
+            resursi.RemoveAt(resursi.FindIndex(k => k.idBroj == idOpreme));
+        }
+
+        public void ukloniAgenta(int idAgenta)
+        {
+            clanovi.RemoveAt(clanovi.FindIndex(k => k.idBroj == idAgenta));
+        }
+        #endregion
+
+        public Tim()
+        {
+            brojClanova = 0;
+
+        }
+
+        public Tim(Agent00x agent)
+        {
+            index00x = agent.x;
+            brojClanova = 1;
+            clanovi.Add(agent);
+            resursi.AddRange(agent.oprema);
+            //agent.status = statusAgenta.zauzet; o ovome se brine konstruktor Misije
+        }
     }
 }

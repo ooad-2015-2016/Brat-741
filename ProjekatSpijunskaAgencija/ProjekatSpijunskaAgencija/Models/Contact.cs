@@ -8,11 +8,11 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public class Contact
     {
-        public String ime { get; set; }
-        public String email { get; set; }
-        public String brojTel { get; set; }
-        public String komentar { get; set; }
-        
+        public string ime { get; set; }
+        public string prezime { get; set; }
+        public string email { get; set; }
+        public string brojTel { get; set; }
+
         public void kontaktiraj()
         {
 

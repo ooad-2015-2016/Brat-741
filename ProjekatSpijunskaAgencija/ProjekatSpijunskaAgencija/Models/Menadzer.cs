@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Menadzer : Uposlenik
+    public class Menadzer : Uposlenik
     {
         public int brojIzvjestaja = 0;
         public Izvjestaj[] izvjestaji { get; set; }

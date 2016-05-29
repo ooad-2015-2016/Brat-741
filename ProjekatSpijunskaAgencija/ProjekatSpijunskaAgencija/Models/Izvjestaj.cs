@@ -10,6 +10,6 @@ namespace ProjekatSpijunskaAgencija.Models
     {
         public DateTime datumKreiranja { get; set; }
         public float stanjeBudzeta { get; set; }
-        public String opis { get; set; }
+        public string opis { get; set; }
     }
 }

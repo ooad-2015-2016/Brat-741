@@ -8,6 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="40" Margin="300,120,0,0" TextWrapping="Wrap" 
+            Text="{Binding Path = uposlenik.kontaktInfo.ime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+            VerticalAlignment="Top" Width="100" Foreground="Black"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="40" Margin="180,120,0,0" TextWrapping="Wrap"
+            Text="Ime" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

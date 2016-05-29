@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class EksterniAkter
+    public class EksterniAkter
     {
-        public String dostupniResursi { get; set; }
+        public string dostupniResursi { get; set; }
         public Contact kontaktInfo { get; set; }
 
-        public void pozoviUPomoc(String razlog)
+        public void pozoviUPomoc(string razlog)
         {
 
         }

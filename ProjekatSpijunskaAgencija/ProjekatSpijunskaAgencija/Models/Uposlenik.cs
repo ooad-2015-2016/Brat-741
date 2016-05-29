@@ -7,15 +7,34 @@ using System.Threading.Tasks;
 namespace ProjekatSpijunskaAgencija.Models
 {
     public enum NivoPristupa { zelena, zuta, plava, crvena, zlatna }
+
     public class Uposlenik
     {
-        public int idBroj { get; set; }
+        #region Atributi koje popunjava sam uposlenik
+        public string username { get; set; }
         public string sifra { get; set; }
         public Contact kontaktInfo { get; set; }
-        //public Contact kontakt { get; set; }
+        #endregion
+
+        #region Atributi koje popunjava direktor/menadzer i sistem
+        public int idBroj { get; set; }
+
         public NivoPristupa nivoPristupa { get; set; }
         public int plata { get; set; }
         public DateTime danZaposljenja { get; set; }
+        #endregion
+        public Uposlenik() { }
+        public Uposlenik(Uposlenik k)
+        {
+            username = k.username;
+            sifra = k.sifra;
+            kontaktInfo = k.kontaktInfo;
+            idBroj = k.idBroj;
+            nivoPristupa = k.nivoPristupa;
+            plata = k.plata;
+            danZaposljenja = k.danZaposljenja;
+        }
+
         public Izvjestaj analizirajIzvjestaj(Izvjestaj izvjestaj)
         {
             return izvjestaj;

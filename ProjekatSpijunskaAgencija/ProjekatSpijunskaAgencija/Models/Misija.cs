@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    class Misija
+    public class Misija
     {
-        private int brojMeta=0;
-        private Meta[] mete;
+        public List<Meta> Mete;
         public float budzet { get; set; }
-        public Izvjestaj[] izvjestaji { get; set; }
+        public List<Izvjestaj> izvjestaji { get; set; }
         public Tim radnaGrupa { get; set; }
 
         //public promijeniBudzet()
@@ -19,10 +18,9 @@ namespace ProjekatSpijunskaAgencija.Models
         {
 
         }
-
-        public void dodajMetu(Meta novaMeta)
+        public Misija()
         {
-            this.mete[brojMeta++] = novaMeta;
+
         }
     }
 }

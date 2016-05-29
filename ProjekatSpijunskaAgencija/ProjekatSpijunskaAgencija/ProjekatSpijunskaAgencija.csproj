@@ -120,7 +120,11 @@
     <Compile Include="Models\Tim.cs" />
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\IzvjestajViewModel.cs" />
     <Compile Include="ViewModels\UposlenikViewModel.cs" />
+    <Compile Include="Views\IzvjestajView.xaml.cs">
+      <DependentUpon>IzvjestajView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -155,6 +159,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\IzvjestajView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>

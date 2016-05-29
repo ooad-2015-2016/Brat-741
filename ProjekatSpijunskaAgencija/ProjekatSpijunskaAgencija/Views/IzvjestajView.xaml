@@ -7,7 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,6,0,-6">
+        <TextBlock x:Name="budzetBlock" HorizontalAlignment="Left" Margin="68,102,0,0" TextWrapping="Wrap" Text="Stanje Budzeta" VerticalAlignment="Top" SelectionChanged="budzet_SelectionChanged"/>
+        <TextBox x:Name="budzetBox" HorizontalAlignment="Left" Margin="171,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="122"/>
+        <TextBox x:Name="latitudeBox" HorizontalAlignment="Left" Margin="171,250,0,0" TextWrapping="Wrap" Text="{Binding Path = izvjestaj.koordinatax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="20" Width="122"/>
+        <TextBox x:Name="longitudeBox" HorizontalAlignment="Left" Margin="171,294,0,0" TextWrapping="Wrap" Text="{Binding Path = izvjestaj.koordinatay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="20" Width="122"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="68,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        	<Run Text="L"/>
+        	<Run Text="ongitude "/>
+        </TextBlock>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="68,258,0,0" TextWrapping="Wrap" Text="Latitude" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Dobavi Lokaciju" HorizontalAlignment="Left" Margin="109,343,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
+        <CheckBox x:Name="checkBox" Content="Lokacija" HorizontalAlignment="Left" Margin="68,213,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" IsChecked="True"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="68,10,0,0" TextWrapping="Wrap" Text="Podnošenje izvještaja" VerticalAlignment="Top" FontSize="24"/>
     </Grid>
 </Page>

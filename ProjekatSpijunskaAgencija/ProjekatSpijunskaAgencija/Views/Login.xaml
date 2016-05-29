@@ -8,15 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="40" Margin="520,240,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="40" Margin="520,300,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="48,192,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="48,242,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
 
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="40" Margin="680,240,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="160" KeyDown="KeyDownPress"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="680,300,0,0" 
-                     VerticalAlignment="Top" Height="40" Width="160" KeyDown="KeyDownPress"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="40" Margin="720,360,0,0" VerticalAlignment="Top" Width="120" Click="login_Click"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="40" Margin="720,420,0,0" VerticalAlignment="Top" Width="120" Click="register_Click"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="33" Margin="176,192,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="127" KeyDown="KeyDownPress"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="176,242,0,0" 
+                     VerticalAlignment="Top" Height="33" Width="127" KeyDown="KeyDownPress"/>
+        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="33" Margin="207,292,0,0" VerticalAlignment="Top" Width="96" Click="login_Click"/>
+        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="33" Margin="207,342,0,0" VerticalAlignment="Top" Width="96" Click="register_Click"/>
 
 
     </Grid>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
@@ -11,5 +12,7 @@ namespace ProjekatSpijunskaAgencija.Models
         public DateTime datumKreiranja { get; set; }
         public float stanjeBudzeta { get; set; }
         public string opis { get; set; }
+        public BasicGeoposition pozicija { set; get; }
+
     }
 }

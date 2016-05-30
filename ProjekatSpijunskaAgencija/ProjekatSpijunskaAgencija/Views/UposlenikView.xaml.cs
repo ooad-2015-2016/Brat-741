@@ -1,4 +1,5 @@
-﻿using ProjekatSpijunskaAgencija.ViewModels;
+﻿using ProjekatSpijunskaAgencija.DataSource;
+using ProjekatSpijunskaAgencija.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,8 +29,9 @@ namespace ProjekatSpijunskaAgencija.Views
         public UposlenikView()
         {
             this.InitializeComponent();
-            DataContext = new UposlenikViewModel();
+            DataContext = new DataSourceSA();
             NavigationCacheMode = NavigationCacheMode.Required;
+            
             //var currentView = SystemNavigationManager.GetForCurrentView();
             //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -39,6 +41,11 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             Loaded += delegate { Focus(FocusState.Programmatic); };
             DataContext = (UposlenikViewModel)e.Parameter;
+            if (((UposlenikViewModel)e.Parameter).Uposlenik.idBroj==-1)
+            {
+                registriraj.Visibility = Visibility.Visible;
+            }
+            else registriraj.Visibility = Visibility.Collapsed;
         }
 
         //private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)

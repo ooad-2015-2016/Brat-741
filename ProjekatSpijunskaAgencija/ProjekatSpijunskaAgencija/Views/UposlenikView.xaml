@@ -8,11 +8,38 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="40" Margin="300,120,0,0" TextWrapping="Wrap" 
-            Text="{Binding Path = uposlenik.kontaktInfo.ime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-            VerticalAlignment="Top" Width="100" Foreground="Black"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="40" Margin="180,120,0,0" TextWrapping="Wrap"
-            Text="Ime" VerticalAlignment="Top" Width="100"/>
+        <Rectangle Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="40" Margin="180,80,0,0" Stroke="#FFC7C7C7" VerticalAlignment="Top" Width="100"/>
+                <Rectangle Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="40" Margin="180,140,0,0" Stroke="#FFC7C7C7" VerticalAlignment="Top" Width="100"/>
+                <Rectangle Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="40" Margin="180,200,0,0" Stroke="#FFC7C7C7" VerticalAlignment="Top" Width="100"/>
+                <Rectangle Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="40" Margin="180,260,0,0" Stroke="#FFC7C7C7" VerticalAlignment="Top" Width="100"/>
+                <Rectangle Fill="#FFC7C7C7" HorizontalAlignment="Left" Height="40" Margin="180,320,0,0" Stroke="#FFC7C7C7" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="imetxt" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap"
+                	Text="Ime" VerticalAlignment="Top" Width="100" Margin="80,80,0,0"/>
+                <TextBlock x:Name="prezimetxt" HorizontalAlignment="Left" Height="40" Margin="80,140,0,0" TextWrapping="Wrap"
+                	Text="Prezime" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="emailtxt" HorizontalAlignment="Left" Height="40" Margin="80,200,0,0" TextWrapping="Wrap"
+                	Text="e-mail" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="brojteltxt" HorizontalAlignment="Left" Height="40" Margin="80,260,0,0" TextWrapping="Wrap"
+                	Text="Broj Telefona" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="idbrojtxt" HorizontalAlignment="Left" Height="40" Margin="80,320,0,0" TextWrapping="Wrap"
+                	Text="Id Broj" VerticalAlignment="Top" Width="100"/>
+                <TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="40" Margin="180,80,0,0" TextWrapping="Wrap"  
+                	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
+                	Text="{Binding Uposlenik.kontaktInfo.ime, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                <TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="40" Margin="180,140,0,0" TextWrapping="Wrap"  
+                	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
+                	Text="{Binding Uposlenik.kontaktInfo.prezime, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="40" Margin="180,200,0,0" TextWrapping="Wrap"  
+                	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
+                	Text="{Binding Uposlenik.kontaktInfo.email, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                <TextBox x:Name="txtBrojTel" HorizontalAlignment="Left" Height="40" Margin="180,260,0,0" TextWrapping="Wrap"  
+                	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
+                	Text="{Binding Uposlenik.kontaktInfo.brojTel, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                <TextBox x:Name="txtIdBroj" HorizontalAlignment="Left" Height="40" Margin="180,320,0,0" TextWrapping="Wrap"  
+                	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
+                	Text="{Binding Uposlenik.idBroj, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                <Button x:Name="button" Content="Trzni" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,402,0,0" Height="38" Width="80" Command="{Binding Trzni}"/>
+                <Button x:Name="registriraj" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,402,0,0" Height="38" Width="80" Command="{Binding Register}"/>
 
     </Grid>
 </Page>

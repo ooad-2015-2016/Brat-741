@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 
 namespace ProjekatSpijunskaAgencija.DataSource
 {
@@ -41,6 +42,11 @@ namespace ProjekatSpijunskaAgencija.DataSource
             }
             return rez;
         }
-
+        public async static void dodajUposlenika(Uposlenik uposlenik)
+        {
+            MessageDialog sar= new MessageDialog("Sarajevo");
+            await sar.ShowAsync();
+            _uposlenici.Add(uposlenik);
+        }
     }
 }

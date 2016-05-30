@@ -23,7 +23,7 @@ namespace ProjekatSpijunskaAgencija.Models
         public int plata { get; set; }
         public DateTime danZaposljenja { get; set; }
         #endregion
-        public Uposlenik() { }
+        public Uposlenik() { idBroj = -1; }
         public Uposlenik(Uposlenik k)
         {
             username = k.username;

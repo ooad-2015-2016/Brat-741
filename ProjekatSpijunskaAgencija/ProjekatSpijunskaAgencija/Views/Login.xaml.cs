@@ -96,7 +96,7 @@ namespace ProjekatSpijunskaAgencija.Views
                 username = username,
                 sifra = password
             };
-            this.Frame.Navigate(typeof(UposlenikRegisterView), new UposlenikViewModel(uposlenik));
+            this.Frame.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik));
         }
 
         private void KeyDownPress(object sender, KeyRoutedEventArgs e)

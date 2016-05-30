@@ -8,7 +8,7 @@
     xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     x:Class="ProjekatSpijunskaAgencija.Views.IzvjestajView"
     mc:Ignorable="d">
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -52,21 +52,21 @@
         </Grid.RowDefinitions>
         <ScrollViewer>
             <Grid x:Name="FirstGrid" Grid.Column="0">
-            <TextBlock x:Name="budzetBlock" HorizontalAlignment="Left" Margin="68,102,0,0" TextWrapping="Wrap" Text="Stanje Budzeta" VerticalAlignment="Top" Height="20" Width="98"/>
-            <TextBox x:Name="budzetBox" HorizontalAlignment="Left" Margin="171,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="32" Width="122"/>
-            <TextBox x:Name="latitudeBox" HorizontalAlignment="Left" Margin="171,250,0,0" TextWrapping="Wrap" Text="{Binding Latitude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="32" Width="122"/>
-            <TextBox x:Name="longitudeBox" HorizontalAlignment="Left" Margin="171,294,0,0" TextWrapping="Wrap" Text="{Binding Longitude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="32" Width="122"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="68,298,0,0" TextWrapping="Wrap" Text="Longitude" VerticalAlignment="Top" Height="20" Width="67"/>
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="68,258,0,0" TextWrapping="Wrap" Text="Latitude" VerticalAlignment="Top" Height="20" Width="54"/>
-            <Button x:Name="button" Content="Dobavi Lokaciju" HorizontalAlignment="Left" Margin="109,343,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Lokacija}" Height="32"/>
-            <CheckBox x:Name="checkBox" Content="Lokacija" HorizontalAlignment="Left" Margin="68,213,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" IsChecked="True" Height="32" Width="120"/>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="68,10,0,0" TextWrapping="Wrap" Text="Podnošenje izvještaja" VerticalAlignment="Top" FontSize="24" Height="32" Width="225"/>
+                <TextBlock x:Name="budzetBlock" HorizontalAlignment="Left" Margin="68,102,0,0" TextWrapping="Wrap" Text="Stanje Budzeta" VerticalAlignment="Top" Height="20" Width="98"/>
+                <TextBox x:Name="budzetBox" HorizontalAlignment="Left" Margin="171,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="32" Width="122"/>
+                <TextBox x:Name="latitudeBox" HorizontalAlignment="Left" Margin="173,248,0,0" TextWrapping="Wrap" Text="{Binding Latitude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="32" Width="122"/>
+                <TextBox x:Name="longitudeBox" HorizontalAlignment="Left" Margin="173,292,0,0" TextWrapping="Wrap" Text="{Binding Longitude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="32" Width="122"/>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="70,296,0,0" TextWrapping="Wrap" Text="Longitude" VerticalAlignment="Top" Height="20" Width="67"/>
+                <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="70,256,0,0" TextWrapping="Wrap" Text="Latitude" VerticalAlignment="Top" Height="20" Width="54"/>
+                <Button x:Name="button" Content="Dobavi Lokaciju" HorizontalAlignment="Left" Margin="111,341,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Lokacija}" Height="32"/>
+                <CheckBox x:Name="checkBox" Content="Lokacija" HorizontalAlignment="Left" Margin="70,211,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" IsChecked="True" Height="32" Width="120"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="68,10,0,0" TextWrapping="Wrap" Text="Podnošenje izvještaja" VerticalAlignment="Top" FontSize="24" Height="32" Width="225"/>
             </Grid>
         </ScrollViewer>
         <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
             <maps:MapControl x:Name="mapa" Grid.Row="3" Center="{Binding TrenutnaLokacija, Mode=OneWay}"
                              MapServiceToken="28Jybqwuz6Jep5hkHngh~ZdUsbfsQYMAysSuSD75XwA~AvUWZQjz_WTpMeDgLI-g9zqu6INg13S2pknRVwqRmIVWARBXaa_CNXZ2axEWrJ3i"/>
         </Grid>
-        
+
     </Grid>
 </Page>

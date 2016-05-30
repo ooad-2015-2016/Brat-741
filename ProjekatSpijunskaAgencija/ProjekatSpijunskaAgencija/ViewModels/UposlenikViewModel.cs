@@ -1,4 +1,5 @@
 ﻿using KompShopMVVM.KompShop.Helper;
+using ProjekatSpijunskaAgencija.DataSource;
 using ProjekatSpijunskaAgencija.Models;
 using ProjekatSpijunskaAgencija.Views;
 using System;
@@ -13,8 +14,15 @@ namespace ProjekatSpijunskaAgencija.ViewModels
 {
     class UposlenikViewModel : INotifyPropertyChanged
     {
-        public Uposlenik uposlenik { get; set; }
+        //UposlenikViewModel ima brigu i o generalisanom Uposlenik view-u i o view-ima koji se ticu registracije novih uposlenika
+        private Uposlenik uposlenik;
         public ICommand DodajUposlenika { get; set; }
+        public ICommand AnalizirajIzvjestaj { get; set; }
+        public ICommand Trzni { get; set; }
+        public ICommand Register { get; set; }
+
+        public Uposlenik Uposlenik { get { return uposlenik; } set { uposlenik = value; NotifyPropertyChanged("Uposlenik"); } }
+
         public INavigationService NavigationService { get; set; }
 
         #region INotifyPropertyChanged
@@ -30,6 +38,9 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         {
             NavigationService = new NavigationService();
             DodajUposlenika = new RelayCommand<object>(dodajUposlenika, mozeLiSeDodatiUposlenik);
+            AnalizirajIzvjestaj = new RelayCommand<object>(analizirajIzvjestaj, mozeLiSeAnaliziratiIzvjestaj);
+            Trzni = new RelayCommand<object>(trzni);
+            Register = new RelayCommand<object>(register);
         }
         public UposlenikViewModel()
         {
@@ -42,14 +53,42 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             Setup();
         }
         #endregion
-
-        public bool mozeLiSeDodatiUposlenik(object parameter)
+        public void register(object parameter)
         {
-            return true;
+            DataSourceSA.dodajUposlenika(uposlenik);
+        }
+        public void trzni(object parameter)
+        {
+            Uposlenik = new Uposlenik()
+            {
+                idBroj = 45,
+                kontaktInfo = new Contact()
+                {
+                    ime = "Test",
+                    prezime = "Pls Work",
+                    email = "@Cigra.kralj",
+                    brojTel = "3456"
+                }
+            };
+        }
+        public void analizirajIzvjestaj(object parameter)
+        {
+            NavigationService.Navigate(typeof(IzvjestajView), uposlenik);
         }
         public void dodajUposlenika(object parameter)
         {
             NavigationService.Navigate(typeof(UposlenikRegisterView), uposlenik);
         }
+
+        #region moze li ovo, moze li ono. Ma sve moze, wuhuuu :D
+        public bool mozeLiSeAnaliziratiIzvjestaj(object parameter)
+        {
+            return true;
+        }
+        public bool mozeLiSeDodatiUposlenik(object parameter)
+        {
+            return true;
+        }
+        #endregion
     }
 }

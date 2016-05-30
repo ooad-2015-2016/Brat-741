@@ -24,6 +24,14 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <DeviceCapability Name="usb">
+      <Device Id="any">
+        <Function Type="classId:ef 01 01"/>
+        <Function Type="name:stillImage"/>
+      </Device>
+    </DeviceCapability>
     <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

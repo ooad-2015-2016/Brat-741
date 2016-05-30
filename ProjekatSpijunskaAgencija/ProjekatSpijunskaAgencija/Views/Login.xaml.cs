@@ -83,6 +83,10 @@ namespace ProjekatSpijunskaAgencija.Views
                 }
             }
         }
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+        }
         private void register_Click(object sender, RoutedEventArgs e)
         {
             var username = Regex.Replace(txtUsername.Text, @"\t|\n|\r", "");

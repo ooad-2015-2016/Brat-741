@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace KompShopMVVM.KompShop.Helper
 {
-    class NavigationService:INavigationService
+    public class NavigationService : INavigationService
     {
         //obicna navigacija bez parametra
         public void Navigate(Type sourcePage)

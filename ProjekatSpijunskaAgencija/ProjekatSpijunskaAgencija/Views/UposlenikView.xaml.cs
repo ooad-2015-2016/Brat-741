@@ -29,9 +29,9 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             this.InitializeComponent();
             DataContext = new UposlenikViewModel();
-            //NavigationCacheMode = NavigationCacheMode.Required;
+            NavigationCacheMode = NavigationCacheMode.Required;
             //var currentView = SystemNavigationManager.GetForCurrentView();
-            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
 
@@ -50,16 +50,9 @@ namespace ProjekatSpijunskaAgencija.Views
         //    }
         //}
 
-        protected override async void OnKeyUp(KeyRoutedEventArgs e)
+        protected override void OnKeyUp(KeyRoutedEventArgs e)
         {
-            MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj ");
-            await dialog.ShowAsync();
-            if (e.Key == Windows.System.VirtualKey.Enter)
-            {
-                MessageDialog did = new MessageDialog("Zdravo uposlenik broj ");
-                await did.ShowAsync();
-                this.Frame.GoBack();
-            }
+            if (e.Key == Windows.System.VirtualKey.Enter) this.Frame.GoBack();
         }
     }
 }

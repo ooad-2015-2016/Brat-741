@@ -31,49 +31,12 @@ namespace ProjekatSpijunskaAgencija.Views
             DataContext = new IzvjestajViewModel();
         }
 
-        private void budzet_SelectionChanged(object sender, RoutedEventArgs e)
+        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-
-        }
-
-        private async void button_Click(object sender, RoutedEventArgs e)
-        {
-            var accessStatus = await Geolocator.RequestAccessAsync();
-
-            MessageDialog dialog = new MessageDialog("Dobavljam Lokaciju");
-            dialog.Commands.Add(new UICommand("Ok"));
-            dialog.DefaultCommandIndex = 0;
-            dialog.ShowAsync();
-
-            // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
-            Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 1000 };
-
-            // Subscribe to the StatusChanged event to get updates of location status changes.
-            //  geolocator.StatusChanged += OnStatusChanged;
-
-            // Carry out the operation.
-            Geoposition pos = await geolocator.GetGeopositionAsync();
-
-            UpdateLocationData(pos);
- 
-        }
-
-        private async void UpdateLocationData(Geoposition pos)
-        {
-            MessageDialog dialog = new MessageDialog(String.Format("Latitude: {0} Longitude: {1}",
-                pos.Coordinate.Latitude, pos.Coordinate.Longitude));
-
-            longitudeBox.Text = String.Format("{0}", pos.Coordinate.Longitude);
-            latitudeBox.Text = String.Format("{0}", pos.Coordinate.Latitude);
-
-            dialog.Commands.Add(new UICommand("Ok"));
-            dialog.DefaultCommandIndex = 0;
-            await dialog.ShowAsync();
-        }
-
-        private void textBlock1_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
+            if (e.Size.Width >= 720)
+                VisualStateManager.GoToState(this, "WideState", false);
+            else
+                VisualStateManager.GoToState(this, "DefaultState", false);
         }
 
         private void checkBox_Checked(object sender, RoutedEventArgs e)

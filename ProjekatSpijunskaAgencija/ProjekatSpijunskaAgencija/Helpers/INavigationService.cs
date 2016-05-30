@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KompShopMVVM.KompShop.Helper
 {
-    interface INavigationService
+    public interface INavigationService
     {
         void Navigate(Type sourcePage);
         void Navigate(Type sourcePage, object parameter);

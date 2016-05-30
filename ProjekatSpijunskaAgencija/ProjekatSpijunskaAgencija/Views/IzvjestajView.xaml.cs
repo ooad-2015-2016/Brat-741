@@ -25,19 +25,13 @@ namespace ProjekatSpijunskaAgencija.Views
     /// </summary>
     public sealed partial class IzvjestajView : Page
     {
+        #region NE DIRAJ
         public IzvjestajView()
         {
             this.InitializeComponent();
-            DataContext = new IzvjestajViewModel();
+            DataContext = new IzvjestajViewModel(mapa);
         }
-
-        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
-        {
-            if (e.Size.Width >= 720)
-                VisualStateManager.GoToState(this, "WideState", false);
-            else
-                VisualStateManager.GoToState(this, "DefaultState", false);
-        }
+        #endregion
 
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {

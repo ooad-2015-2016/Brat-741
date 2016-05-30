@@ -25,7 +25,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         private double _latitude;
         public double Longitude { get { return _longitude; } set { this._longitude = value; NotifyPropertyChanged("Longitude"); } }
         public double Latitude { get { return _latitude; } set { this._latitude = value; NotifyPropertyChanged("Latitude"); } }
-        MapControl Mapa;
+        MapControl Mapa;
+
         public ICommand Lokacija { get; set; }
         public INavigationService NavigationService { get; set; }
 
@@ -63,7 +64,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             // Carry out the operation.
             Geoposition pos = await geolocator.GetGeopositionAsync();
 
-           
+
+
             UpdateLocationData(pos);
         }
         private void DisplayIcon(double x, double y, MapControl MapControl1)
@@ -77,10 +79,11 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
             mapIcon1.Title = "Pin";
             mapIcon1.ZIndex = 0;
-
+            
             // Add the MapIcon to the map.
             MapControl1.MapElements.Add(mapIcon1);
-
+            // MapControl1.MapElements.Add(new MapIcon() { Location = new Geopoint(new BasicGeoposition() { Latitude = x - 5, Longitude = y } ), NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "Pin", ZIndex=0 });
+            
             // Center the map over the POI.
             MapControl1.Center = snPoint;
             MapControl1.ZoomLevel = 14;

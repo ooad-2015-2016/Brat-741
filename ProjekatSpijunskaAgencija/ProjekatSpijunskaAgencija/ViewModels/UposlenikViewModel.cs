@@ -49,7 +49,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         }
         public void dodajUposlenika(object parameter)
         {
-            NavigationService.Navigate(typeof(UposlenikRegisterView), new Uposlenik());
+            NavigationService.Navigate(typeof(UposlenikRegisterView), uposlenik);
         }
     }
 }

@@ -231,6 +231,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\source\Serial\Microsoft.Maker.Serial.win10\Microsoft.Maker.Serial.vcxproj">
+      <Project>{8376216c-282a-4927-b9ef-c2d545fe0bca}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

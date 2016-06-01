@@ -35,7 +35,7 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             this.InitializeComponent();
             var data = new DataSourceSA();
-            DataSourceSA.zapisiPodatke();
+            //DataSourceSA.zapisiPodatke();
             DataSourceSA.ucitajPodatke();
             //var currentView = SystemNavigationManager.GetForCurrentView();
             //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;

@@ -8,13 +8,12 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public class Menadzer : Uposlenik
     {
-        public int brojIzvjestaja = 0;
         public List<Izvjestaj> izvjestaji { get; set; }
 
         public void kreirajMisiju() { }
         public Izvjestaj podnesiIzvjestaj()
         {
-            return this.izvjestaji[brojIzvjestaja];
+            return this.izvjestaji.Last<Izvjestaj>();
         }
     }
 }

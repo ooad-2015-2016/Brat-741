@@ -54,7 +54,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             MessageDialog dialog = new MessageDialog("Dobavljam Lokaciju");
             dialog.Commands.Add(new UICommand("Ok"));
             dialog.DefaultCommandIndex = 0;
-            dialog.ShowAsync();
+            await dialog.ShowAsync();
             // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
             Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 1000 };
 

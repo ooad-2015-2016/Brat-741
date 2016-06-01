@@ -8,7 +8,6 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public class Direktor : Menadzer
     {
-
         public void ekstrakcijaAgenta() { }
         public void kontaktirajVanjskeAktere() { }
     }

@@ -8,7 +8,6 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public class Tim
     {
-        private int brojClanova;
         public int index00x { get; set; }
 
         private List<Agent> clanovi { get; set; }
@@ -38,14 +37,11 @@ namespace ProjekatSpijunskaAgencija.Models
 
         public Tim()
         {
-            brojClanova = 0;
-
         }
 
         public Tim(Agent00x agent)
         {
             index00x = agent.x;
-            brojClanova = 1;
             clanovi.Add(agent);
             resursi.AddRange(agent.oprema);
             //agent.status = statusAgenta.zauzet; o ovome se brine konstruktor Misije

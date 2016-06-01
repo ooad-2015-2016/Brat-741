@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="32a19593-805a-4694-ac88-e749e0e7bf29" Publisher="CN=Tarik" Version="1.0.0.0" />
+  <Identity Name="SpijunskaAgencijaBRAT741" Publisher="CN=Tarik" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="32a19593-805a-4694-ac88-e749e0e7bf29" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ProjekatSpijunskaAgencija</DisplayName>
@@ -24,6 +24,13 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <DeviceCapability Name="serialcommunication">
+      <Device Id="any">
+        <Function Type="name:serialPort"/>
+      </Device>
+    </DeviceCapability>
     <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

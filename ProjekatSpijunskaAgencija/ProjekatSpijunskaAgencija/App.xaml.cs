@@ -1,4 +1,6 @@
-﻿using ProjekatSpijunskaAgencija.Views;
+﻿using Microsoft.Maker.RemoteWiring;
+using Microsoft.Maker.Serial;
+using ProjekatSpijunskaAgencija.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,6 +30,18 @@ namespace ProjekatSpijunskaAgencija
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        /// 
+        public static IStream Connection
+        {
+            get;
+            set;
+        }
+
+        public static RemoteDevice Arduino
+        {
+            get;
+            set;
+        }
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
@@ -134,6 +148,13 @@ namespace ProjekatSpijunskaAgencija
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            //zabrani access kada se app izgasi
+            if (Arduino != null)
+            {
+                Arduino.digitalWrite(3, PinState.LOW);
+                Arduino.digitalWrite(4, PinState.LOW);
+                Arduino.digitalWrite(5, PinState.LOW);
+            }
             deferral.Complete();
         }
     }

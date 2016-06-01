@@ -42,6 +42,37 @@ namespace ProjekatSpijunskaAgencija.Views
             //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
         }
 
+        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var frame = this.DataContext as Frame;
+            if (frame?.CanGoBack == true)
+            {
+                frame.GoBack();
+            }
+        }
+
+        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.SplitView.IsPaneOpen = !this.SplitView.IsPaneOpen;
+        }
+
+        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (typeof(Frame) != typeof(Login))
+            {
+                this.Frame.Navigate(typeof(Login));
+            }
+        }
+
+        private void FriendsRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (typeof(Frame) != typeof(UposlenikView))
+            {
+                this.Frame.Navigate(typeof(UposlenikView));
+            }
+        }
+
         //private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         //{
         //    if (Frame.CanGoBack)

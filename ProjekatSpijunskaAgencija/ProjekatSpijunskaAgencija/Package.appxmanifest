@@ -4,7 +4,7 @@
   <mp:PhoneIdentity PhoneProductId="32a19593-805a-4694-ac88-e749e0e7bf29" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ProjekatSpijunskaAgencija</DisplayName>
-    <PublisherDisplayName>Tarik</PublisherDisplayName>
+    <PublisherDisplayName>Amar</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

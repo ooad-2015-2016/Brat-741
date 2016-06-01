@@ -7,39 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="TextTrimming" Value="None"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="LineStackingStrategy" Value="MaxHeight"/>
-            <Setter Property="TextLineBounds" Value="Full"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-        </Style>
-        <LinearGradientBrush x:Key="moje" EndPoint="0,1" StartPoint="1,1">
-            <GradientStop Color="#FF7C7C7C" Offset="1"/>
-            <GradientStop Color="#FFB2B2B2"/>
-            <GradientStop Color="#FF9A9A9A" Offset="0.911"/>
-        </LinearGradientBrush>
-        <Style x:Key="BaseTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Background" Value="{ThemeResource moje}"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Width" Value="140"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="SelectionHighlightColor" Value="#FF0078D7"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="RenderTransformOrigin" Value="0.302,0.5"/>
-            <Setter Property="BorderBrush" Value="#00DDDDDD"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
+        
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}">
+            <SplitView.Pane>
+                <StackPanel x:Name="SplitViewPanePanel">
+                    <RadioButton x:Name="BackRadioButton" Click="BackRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
+                    <RadioButton x:Name="HamburgerRadioButton" Click="HamburgerRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                    <RadioButton x:Name="HomeRadioButton" Click="HomeRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                    <RadioButton x:Name="FriendsRadioButton" Click="FriendsRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+        
         <TextBlock x:Name="imetxt" Style="{ThemeResource BaseTextBlockStyle}" Text="Ime" Margin="80,80,0,0" />
         <TextBlock x:Name="prezimetxt" Margin="80,140,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="Prezime"/>
         <TextBlock x:Name="emailtxt" Margin="80,200,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="e-mail"/>

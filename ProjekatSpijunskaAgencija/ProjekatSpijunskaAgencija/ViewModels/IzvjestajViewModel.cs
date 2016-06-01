@@ -65,7 +65,6 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             Geoposition pos = await geolocator.GetGeopositionAsync();
 
 
-
             UpdateLocationData(pos);
         }
         private void DisplayIcon(double x, double y, MapControl MapControl1)

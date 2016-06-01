@@ -16,14 +16,12 @@ namespace ProjekatSpijunskaAgencija.ViewModels
     {
         //UposlenikViewModel ima brigu i o generalisanom Uposlenik view-u i o view-ima koji se ticu registracije novih uposlenika
         private Uposlenik uposlenik;
-        private Contact _kontaktInfo;
 
         public ICommand DodajUposlenika { get; set; }
         public ICommand AnalizirajIzvjestaj { get; set; }
         public ICommand Trzni { get; set; }
         public ICommand Register { get; set; }
-        public Contact kontaktInfo { get { return _kontaktInfo; } set { _kontaktInfo = value; NotifyPropertyChanged("kontaktInfo"); } }
-        public Uposlenik Uposlenik { get { return uposlenik; } set { uposlenik = value; NotifyPropertyChanged("Uposlenik"); } }
+        public Uposlenik Uposlenik { get { return uposlenik; } set { uposlenik = value; NotifyPropertyChanged("Uposlenik"); NotifyPropertyChanged("kontaktInfo"); } }
 
         public INavigationService NavigationService { get; set; }
 
@@ -46,20 +44,27 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         }
         public UposlenikViewModel()
         {
-            uposlenik = new Uposlenik();
-            _kontaktInfo = uposlenik.kontaktInfo;
+            Uposlenik = new Uposlenik();
             Setup();
         }
         public UposlenikViewModel(Uposlenik parameter) 
         {
-            uposlenik = parameter;
-            _kontaktInfo = uposlenik.kontaktInfo;
+            Uposlenik = new Uposlenik()
+            {
+                idBroj = parameter.idBroj,
+                username = parameter.username,
+                sifra = parameter.sifra,
+                kontaktInfo = parameter.kontaktInfo,
+                nivoPristupa = parameter.nivoPristupa,
+                plata = parameter.plata
+            };
+           
+            Uposlenik = parameter;
             Setup();
         }
         #endregion
         public void register(object parameter)
         {
-            uposlenik.kontaktInfo = _kontaktInfo;
             DataSourceSA.dodajUposlenika(uposlenik);
             DataSourceSA.zapisiPodatke();
         }
@@ -76,7 +81,6 @@ namespace ProjekatSpijunskaAgencija.ViewModels
                     brojTel = "3456"
                 }
             };
-            kontaktInfo = Uposlenik.kontaktInfo;
         }
         public void analizirajIzvjestaj(object parameter)
         {

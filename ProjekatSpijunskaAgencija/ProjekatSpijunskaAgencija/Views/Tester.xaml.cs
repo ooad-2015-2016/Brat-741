@@ -1,13 +1,10 @@
-﻿using ProjekatSpijunskaAgencija.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,15 +20,12 @@ namespace ProjekatSpijunskaAgencija.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class IzvjestajView : Page
+    public sealed partial class Tester : Page
     {
-        #region NE DIRAJ
-        public IzvjestajView()
+        public Tester()
         {
             this.InitializeComponent();
-            DataContext = new IzvjestajViewModel(mapa);
         }
-        #endregion
         private void BackRadioButton_Click(object sender, RoutedEventArgs e)
         {
             var frame = this.DataContext as Frame;
@@ -61,23 +55,6 @@ namespace ProjekatSpijunskaAgencija.Views
             {
                 this.Frame.Navigate(typeof(UposlenikView));
             }
-        }
-        private void checkBox_Checked(object sender, RoutedEventArgs e)
-        {
-            longitudeBox.Visibility = Visibility.Visible;
-            latitudeBox.Visibility = Visibility.Visible;
-            textBlock.Visibility = Visibility.Visible;
-            textBlock_Copy.Visibility = Visibility.Visible;
-            button.Visibility = Visibility.Visible;
-        }
-
-        private void checkBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            longitudeBox.Visibility = Visibility.Collapsed;
-            latitudeBox.Visibility = Visibility.Collapsed;
-            textBlock.Visibility = Visibility.Collapsed;
-            textBlock_Copy.Visibility = Visibility.Collapsed;
-            button.Visibility = Visibility.Collapsed;
         }
     }
 }

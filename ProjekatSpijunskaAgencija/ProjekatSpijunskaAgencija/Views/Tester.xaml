@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ProjekatSpijunskaAgencija.Views.Login"
+    x:Class="ProjekatSpijunskaAgencija.Views.Tester"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatSpijunskaAgencija.Views"
@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
         <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}">
             <SplitView.Pane>
                 <StackPanel x:Name="SplitViewPanePanel">
@@ -18,16 +18,7 @@
                 </StackPanel>
             </SplitView.Pane>
         </SplitView>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="104,102,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="104,152,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
-
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="33" Margin="232,102,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="127" KeyDown="KeyDownPress"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="232,152,0,0" 
-                     VerticalAlignment="Top" Height="33" Width="127" KeyDown="KeyDownPress"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="33" Margin="263,202,0,0" VerticalAlignment="Top" Width="96" Click="login_Click"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="33" Margin="263,252,0,0" VerticalAlignment="Top" Width="96" Click="register_Click"/>
-
-
     </Grid>
+
+
 </Page>

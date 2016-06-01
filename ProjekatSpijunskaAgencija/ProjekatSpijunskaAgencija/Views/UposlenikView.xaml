@@ -25,21 +25,21 @@
                 	Text="Id Broj" VerticalAlignment="Top" Width="100"/>
                 <TextBox x:Name="txtIme" HorizontalAlignment="Left" Height="40" Margin="180,80,0,0" TextWrapping="Wrap"  
                 	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
-                	Text="{Binding Uposlenik.kontaktInfo.ime, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                	Text="{Binding Uposlenik.kontaktInfo.ime, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
                 <TextBox x:Name="txtPrezime" HorizontalAlignment="Left" Height="40" Margin="180,140,0,0" TextWrapping="Wrap"  
                 	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
-                	Text="{Binding Uposlenik.kontaktInfo.prezime, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                	Text="{Binding Uposlenik.kontaktInfo.prezime, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
                 <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="40" Margin="180,200,0,0" TextWrapping="Wrap"  
                 	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
-                	Text="{Binding Uposlenik.kontaktInfo.email, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                	Text="{Binding Uposlenik.kontaktInfo.email, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
                 <TextBox x:Name="txtBrojTel" HorizontalAlignment="Left" Height="40" Margin="180,260,0,0" TextWrapping="Wrap"  
                 	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
-                	Text="{Binding Uposlenik.kontaktInfo.brojTel, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                	Text="{Binding Uposlenik.kontaktInfo.brojTel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
                 <TextBox x:Name="txtIdBroj" HorizontalAlignment="Left" Height="40" Margin="180,320,0,0" TextWrapping="Wrap"  
                 	VerticalAlignment="Top" Width="100" Foreground="Black" SelectionHighlightColor="#FF0078D7"
-                	Text="{Binding Uposlenik.idBroj, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
+                	Text="{Binding Uposlenik.idBroj, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.302,0.5"/>
                 <Button x:Name="button" Content="Trzni" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,402,0,0" Height="38" Width="80" Command="{Binding Trzni}"/>
-                <Button x:Name="registriraj" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,402,0,0" Height="38" Width="80" Command="{Binding Register}"/>
+                <Button x:Name="registriraj" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,402,0,0" Height="38" Width="80" Command="{Binding Register}" Visibility="{Binding Visible}"/>
 
     </Grid>
 </Page>

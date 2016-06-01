@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="ProjekatSpijunskaAgencija.Helpers.Resource_Group"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatSpijunskaAgencija.Helpers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView HorizontalAlignment="Left" Height="640" VerticalAlignment="Bottom" Width="480">
+            <SplitView.Pane>
+                <Grid/>
+            </SplitView.Pane>
+            <Grid/>
+        </SplitView>
+
+    </Grid>
+</Page>

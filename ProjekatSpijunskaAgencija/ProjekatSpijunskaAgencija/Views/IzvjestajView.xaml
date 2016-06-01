@@ -9,7 +9,7 @@
     x:Class="ProjekatSpijunskaAgencija.Views.IzvjestajView"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainGrid">
+    <Grid Background="White" x:Name="MainGrid">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="WideState">

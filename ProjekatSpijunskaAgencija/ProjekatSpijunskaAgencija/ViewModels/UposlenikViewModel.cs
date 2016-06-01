@@ -77,7 +77,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         }
         public void dodajUposlenika(object parameter)
         {
-            NavigationService.Navigate(typeof(UposlenikRegisterView), uposlenik);
+            NavigationService.Navigate(typeof(UposlenikView), uposlenik);
         }
 
         #region moze li ovo, moze li ono. Ma sve moze, wuhuuu :D

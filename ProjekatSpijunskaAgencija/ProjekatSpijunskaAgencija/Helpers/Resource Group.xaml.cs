@@ -15,21 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace ProjekatSpijunskaAgencija.Views
+namespace ProjekatSpijunskaAgencija.Helpers
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class UposlenikRegisterView : Page
+    public sealed partial class Resource_Group : Page
     {
-        public UposlenikRegisterView()
+        public Resource_Group()
         {
             this.InitializeComponent();
-        }
-
-        private void keyDown(object sender, KeyRoutedEventArgs e)
-        {
-
         }
     }
 }

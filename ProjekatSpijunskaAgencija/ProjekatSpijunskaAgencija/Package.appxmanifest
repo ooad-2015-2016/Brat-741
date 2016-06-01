@@ -26,10 +26,9 @@
     <Capability Name="internetClient" />
     <Capability Name="internetClientServer" />
     <Capability Name="privateNetworkClientServer" />
-    <DeviceCapability Name="usb">
+    <DeviceCapability Name="serialcommunication">
       <Device Id="any">
-        <Function Type="classId:ef 01 01"/>
-        <Function Type="name:stillImage"/>
+        <Function Type="name:serialPort"/>
       </Device>
     </DeviceCapability>
     <DeviceCapability Name="location" />

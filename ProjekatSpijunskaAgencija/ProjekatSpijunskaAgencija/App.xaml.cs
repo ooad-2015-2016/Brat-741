@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maker.RemoteWiring;
 using Microsoft.Maker.Serial;
+using ProjekatSpijunskaAgencija.DataSource;
 using ProjekatSpijunskaAgencija.Views;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ namespace ProjekatSpijunskaAgencija
                 Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
+            
             this.Suspending += OnSuspending;
         }
 

@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace ProjekatSpijunskaAgencija.ViewModels
 {
-    class SplitViewModel : INotifyPropertyChanged
+    public class SplitViewModel : INotifyPropertyChanged
     {
         private bool isPaneOpen;
         public bool IsPaneOpen { get { return isPaneOpen; } set { isPaneOpen = value; NotifyPropertyChanged("IsPaneOpen"); NotifyPropertyChanged("SplitViewModel"); } }

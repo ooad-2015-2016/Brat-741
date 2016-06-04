@@ -25,11 +25,13 @@
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="104,152,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
 
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="33" Margin="232,102,0,0" 
-                 TextWrapping="Wrap" VerticalAlignment="Top" Width="127" KeyDown="KeyDownPress"/>
+                 Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="127" AcceptsReturn="True" PlaceholderText="Username"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="232,152,0,0" 
-                 VerticalAlignment="Top" Height="33" Width="127" KeyDown="KeyDownPress"/>
-        <Button x:Name="button" Content="Login" HorizontalAlignment="Left" Height="33" Margin="263,202,0,0" VerticalAlignment="Top" Width="96" Click="login_Click"/>
-        <Button x:Name="button1" Content="Register" HorizontalAlignment="Left" Height="33" Margin="263,252,0,0" VerticalAlignment="Top" Width="96" Click="register_Click"/>
+                 Password="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 PlaceholderText="********"  VerticalAlignment="Top" Height="33" Width="127" KeyDown="txtPassword_KeyDown"/>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="263,202,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}"/>
+        <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="263,252,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}"/>
 
     </Grid>
 </Page>

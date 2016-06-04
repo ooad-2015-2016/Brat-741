@@ -17,7 +17,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         //UposlenikViewModel ima brigu i o generalisanom Uposlenik view-u i o view-ima koji se ticu registracije novih uposlenika
         private Uposlenik uposlenik;
 
-        private SplitViewModel splitView = new SplitViewModel();
+        private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
 
         public ICommand DodajUposlenika { get; set; }
@@ -40,6 +40,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public void Setup()
         {
             NavigationService = new NavigationService();
+            splitView = new SplitViewModel(NavigationService);
             DodajUposlenika = new RelayCommand<object>(dodajUposlenika, mozeLiSeDodatiUposlenik);
             AnalizirajIzvjestaj = new RelayCommand<object>(analizirajIzvjestaj, mozeLiSeAnaliziratiIzvjestaj);
             Trzni = new RelayCommand<object>(trzni);

@@ -27,7 +27,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public double Latitude { get { return _latitude; } set { this._latitude = value; NotifyPropertyChanged("Latitude"); } }
         MapControl Mapa;
 
-        private SplitViewModel splitView = new SplitViewModel();
+        private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
 
         public ICommand Lokacija { get; set; }
@@ -44,6 +44,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             NavigationService = new NavigationService();
             Lokacija = new RelayCommand<object>(lokacija, mozeLiSeLocirati);
             izvjestaj = new Izvjestaj();
+            splitView = new SplitViewModel(NavigationService);
             Mapa = mapa;
         }
         public bool mozeLiSeLocirati(object parameter)

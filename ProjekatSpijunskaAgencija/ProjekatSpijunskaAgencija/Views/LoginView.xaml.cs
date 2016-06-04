@@ -1,4 +1,5 @@
-﻿using ProjekatSpijunskaAgencija.DataSource;
+﻿using KompShopMVVM.KompShop.Helper;
+using ProjekatSpijunskaAgencija.DataSource;
 using ProjekatSpijunskaAgencija.Models;
 using ProjekatSpijunskaAgencija.ViewModels;
 using System;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -27,68 +29,24 @@ namespace ProjekatSpijunskaAgencija.Views
     /// </summary>
     public sealed partial class LoginView : Page
     {
-        private bool dialogOn { get; set; }
-
+        public LoginViewModel dcontext = new LoginViewModel();
         public LoginView()
         {
             this.InitializeComponent();
             DataSourceSA.ucitajPodatke();
-            DataContext = new LoginViewModel();
+            
+            DataContext = dcontext;
         }
-
-        private async void login_Click(object sender, RoutedEventArgs e)
-        {
-            //uklanja enter iz teksta, koji je smetao kada se pritisne enter za login
-            var username = Regex.Replace(txtUsername.Text, @"\t|\n|\r", "");
-            var password = Regex.Replace(txtPassword.Password, @"\t|\n|\r", "");
-            Uposlenik uposlenik = DataSourceSA.dajUposlenika(username, password);
-            if (uposlenik != null)
-            {
-                if (!dialogOn)
-                {
-                    MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj " + uposlenik.idBroj);
-                    dialogOn = true;
-                    await dialog.ShowAsync();
-                    dialogOn = false;
-                    this.Frame.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik));
-                }
-            }
-            else
-            {
-                if (!dialogOn)
-                {
-                    MessageDialog dialog = new MessageDialog("Pogresni podaci, probajte ponovo ili se registrujte");
-
-                    //Treba napraviti mogucnost da u samom dijalogu odabere mogucnost za registraciju.
-                    dialog.Commands.Add(new UICommand("Try again"));
-                    //dialog.Commands.Add(new UICommand("Close"));
-                    dialog.DefaultCommandIndex = 0;
-                    //dialog.CancelCommandIndex = 1;
-                    dialogOn = true;
-                    await dialog.ShowAsync();
-                    dialogOn = false;
-                }
-            }
-        }
+        
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
-        }
-        private void register_Click(object sender, RoutedEventArgs e)
-        {
-            var username = Regex.Replace(txtUsername.Text, @"\t|\n|\r", "");
-            var password = Regex.Replace(txtPassword.Password, @"\t|\n|\r", "");
-            var uposlenik = new Uposlenik()
-            {
-                username = username,
-                sifra = password
-            };
-            this.Frame.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik));
+            
         }
 
-        private void KeyDownPress(object sender, KeyRoutedEventArgs e)
+        private void txtPassword_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == Windows.System.VirtualKey.Enter) login_Click(sender, e);
+            if (e.Key == Windows.System.VirtualKey.Enter) dcontext.login_Click(sender);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace KompShopMVVM.KompShop.Helper
 {
     public class NavigationService : INavigationService
     {
+        private bool canGoBack = true;
         //obicna navigacija bez parametra
         public void Navigate(Type sourcePage)
         {
@@ -28,5 +29,14 @@ namespace KompShopMVVM.KompShop.Helper
             var frame = (Frame) Window.Current.Content;
             frame.GoBack();
         }
+        public bool CanGoBack()
+        {
+            return canGoBack;
+        }
+        public void SetCanGoBack(bool set)
+        {
+            canGoBack = set;
+        }
+
     }
 }

@@ -31,17 +31,9 @@ namespace ProjekatSpijunskaAgencija
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         /// 
-        public static IStream Connection
-        {
-            get;
-            set;
-        }
+        public static IStream Connection { get; set; }
 
-        public static RemoteDevice Arduino
-        {
-            get;
-            set;
-        }
+        public static RemoteDevice Arduino { get; set; }
         public App()
         {
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
@@ -92,7 +84,7 @@ namespace ProjekatSpijunskaAgencija
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(Tester), e.Arguments);
+                rootFrame.Navigate(typeof(LoginView), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();

@@ -123,6 +123,13 @@
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\IzvjestajViewModel.cs" />
+    <Compile Include="ViewModels\KlijentViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MenadzerViewModel.cs" />
+    <Compile Include="ViewModels\MisijaViewModel.cs" />
+    <Compile Include="ViewModels\SplitViewModel.cs" />
+    <Compile Include="ViewModels\TesterViewModel.cs" />
+    <Compile Include="ViewModels\TimViewModel.cs" />
     <Compile Include="ViewModels\UposlenikViewModel.cs" />
     <Compile Include="Views\ArduinoView.xaml.cs">
       <DependentUpon>ArduinoView.xaml</DependentUpon>
@@ -133,11 +140,23 @@
     <Compile Include="Views\IzvjestajView.xaml.cs">
       <DependentUpon>IzvjestajView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="Views\KlijentView.xaml.cs">
+      <DependentUpon>KlijentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenadzerView.xaml.cs">
+      <DependentUpon>MenadzerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MisijaView.xaml.cs">
+      <DependentUpon>MisijaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tester.xaml.cs">
       <DependentUpon>Tester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimView.xaml.cs">
+      <DependentUpon>TimView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UposlenikView.xaml.cs">
       <DependentUpon>UposlenikView.xaml</DependentUpon>
@@ -180,11 +199,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Login.xaml">
+    <Page Include="Views\KlijentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenadzerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MisijaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Tester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

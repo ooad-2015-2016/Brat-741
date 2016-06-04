@@ -100,14 +100,14 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
         <Style x:Key="SplitViewMoj" TargetType="SplitView">
             <Setter Property = "Background" Value = "White"/>
             <Setter Property = "OpenPaneLength" Value = "240"/>
             <Setter Property = "CompactPaneLength" Value = "48"/>
             <Setter Property = "DisplayMode" Value = "CompactOverlay"/>
-            <Setter Property = "IsPaneOpen" Value = "False"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Grid.ColumnSpan" Value="2"/>
+            <Setter Property = "BorderThickness" Value = "0"/>
+            <Setter Property = "Grid.ColumnSpan" Value = "2"/>
         </Style>
     </Application.Resources>
 

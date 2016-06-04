@@ -52,16 +52,6 @@
         </Grid.RowDefinitions>
         <ScrollViewer>
             <Grid x:Name="FirstGrid" Grid.Column="0">
-                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}">
-                    <SplitView.Pane>
-                        <StackPanel x:Name="SplitViewPanePanel">
-                            <RadioButton x:Name="BackRadioButton" Click="BackRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
-                            <RadioButton x:Name="HamburgerRadioButton" Click="HamburgerRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
-                            <RadioButton x:Name="HomeRadioButton" Click="HomeRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                            <RadioButton x:Name="FriendsRadioButton" Click="FriendsRadioButton_Click" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
-                        </StackPanel>
-                    </SplitView.Pane>
-                </SplitView>
                 <TextBlock x:Name="budzetBlock" HorizontalAlignment="Left" Margin="120,162,0,0" TextWrapping="Wrap" Text="Stanje Budzeta" VerticalAlignment="Top" Height="20" Width="98"/>
                 <TextBox x:Name="budzetBox" HorizontalAlignment="Left" Margin="223,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="32" Width="122"/>
                 <TextBox x:Name="latitudeBox" HorizontalAlignment="Left" Margin="225,308,0,0" TextWrapping="Wrap" Text="{Binding Latitude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="32" Width="122"/>
@@ -71,6 +61,16 @@
                 <Button x:Name="button" Content="Dobavi Lokaciju" HorizontalAlignment="Left" Margin="163,401,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Lokacija}" Height="32"/>
                 <CheckBox x:Name="checkBox" Content="Lokacija" HorizontalAlignment="Left" Margin="122,271,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" IsChecked="True" Height="32" Width="120"/>
                 <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="120,70,0,0" TextWrapping="Wrap" Text="Podnošenje izvještaja" VerticalAlignment="Top" FontSize="24" Height="32" Width="225"/>
+                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" Grid.ColumnSpan="1" IsPaneOpen = "{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,720,0">
+                    <SplitView.Pane>
+                        <StackPanel x:Name="SplitViewPanePanel">
+                            <RadioButton x:Name="BackRadioButton" Command="{Binding SplitView.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
+                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding SplitView.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                            <RadioButton x:Name="HomeRadioButton" Command="{Binding SplitView.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                        </StackPanel>
+                    </SplitView.Pane>
+                </SplitView>
             </Grid>
         </ScrollViewer>
         <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">

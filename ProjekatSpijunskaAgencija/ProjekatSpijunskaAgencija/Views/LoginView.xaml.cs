@@ -9,7 +9,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,61 +25,16 @@ namespace ProjekatSpijunskaAgencija.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class LoginView : Page
     {
-        public object NotifyType { get; private set; }
-
         private bool dialogOn { get; set; }
-        public Login()
+
+        public LoginView()
         {
             this.InitializeComponent();
-            var data = new DataSourceSA();
-            //DataSourceSA.zapisiPodatke();
             DataSourceSA.ucitajPodatke();
-            //var currentView = SystemNavigationManager.GetForCurrentView();
-            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
-            //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            DataContext = new LoginViewModel();
         }
-
-        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = this.DataContext as Frame;
-            if (frame?.CanGoBack == true)
-            {
-                frame.GoBack();
-            }
-        }
-
-        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            this.SplitView.IsPaneOpen = !this.SplitView.IsPaneOpen;
-        }
-
-        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (typeof(Frame) != typeof(Login))
-            {
-                this.Frame.Navigate(typeof(Login));
-            }
-        }
-
-        private void FriendsRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (typeof(Frame) != typeof(UposlenikView))
-            {
-                this.Frame.Navigate(typeof(UposlenikView));
-            }
-        }
-
-        //private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
-        //{
-        //    if (Frame.CanGoBack)
-        //    {
-        //        Frame.GoBack();
-        //        e.Handled = true;
-        //    }
-        //}
 
         private async void login_Click(object sender, RoutedEventArgs e)
         {

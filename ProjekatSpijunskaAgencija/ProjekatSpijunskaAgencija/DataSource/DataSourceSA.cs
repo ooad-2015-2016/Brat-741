@@ -16,7 +16,6 @@ namespace ProjekatSpijunskaAgencija.DataSource
         private static List<Oprema> _resursi = new List<Oprema>();
         private static List<Misija> _misije = new List<Misija>();
         private static List<Tim> _timovi = new List<Tim>();
-
         private static List<Uposlenik> _uposlenici = new List<Uposlenik>();
         //{
         //    
@@ -77,31 +76,39 @@ namespace ProjekatSpijunskaAgencija.DataSource
             }
             return rez;
         }
+
         public async static void dodajUposlenika(Uposlenik uposlenik)
         {
-            MessageDialog sar= new MessageDialog("Sarajevo");
-            await sar.ShowAsync();
-            _uposlenici.Add(uposlenik);
+            if (_uposlenici.Count<Uposlenik>(k => k.kontaktInfo.prezime == uposlenik.kontaktInfo.prezime && k.kontaktInfo.ime==uposlenik.kontaktInfo.ime) == 0)
+            {
+                _uposlenici.Add(uposlenik);
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog("Uposlenik vec postoji");
+                await md.ShowAsync();
+            }
         }
      
-
         public async static void ucitajPodatke()
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             Windows.Storage.StorageFile uposlenici = await storageFolder.CreateFileAsync("uposlenici.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+
             string json = await Windows.Storage.FileIO.ReadTextAsync(uposlenici);
             _uposlenici = JsonConvert.DeserializeObject<List<Uposlenik>>(json);
-            var nd = new MessageDialog(json);
-            await nd.ShowAsync();
+
+            //var nd = new MessageDialog(json);
+            //await nd.ShowAsync();
         }
         public async static void zapisiPodatke()
         {
             string json = JsonConvert.SerializeObject(_uposlenici);
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            MessageDialog md = new MessageDialog(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
-            await md.ShowAsync();
-            //Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            //MessageDialog md = new MessageDialog(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
+            //await md.ShowAsync();
             Windows.Storage.StorageFile uposlenici = await storageFolder.CreateFileAsync("uposlenici.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+
             await Windows.Storage.FileIO.WriteTextAsync(uposlenici, json);
         }
     }

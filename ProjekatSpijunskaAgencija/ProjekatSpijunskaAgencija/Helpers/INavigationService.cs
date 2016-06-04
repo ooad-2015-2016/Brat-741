@@ -11,5 +11,7 @@ namespace KompShopMVVM.KompShop.Helper
         void Navigate(Type sourcePage);
         void Navigate(Type sourcePage, object parameter);
         void GoBack();
+        bool CanGoBack();
+        void SetCanGoBack(bool set);
     }
 }

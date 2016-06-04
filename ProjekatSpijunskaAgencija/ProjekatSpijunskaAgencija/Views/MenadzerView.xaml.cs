@@ -1,5 +1,4 @@
-﻿using ProjekatSpijunskaAgencija.DataSource;
-using ProjekatSpijunskaAgencija.ViewModels;
+﻿using ProjekatSpijunskaAgencija.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,8 +6,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Core;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,19 +21,13 @@ namespace ProjekatSpijunskaAgencija.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class UposlenikView : Page
+    public sealed partial class MenadzerView : Page
     {
-        public UposlenikView()
+        public MenadzerView()
         {
             this.InitializeComponent();
-            DataContext = new DataSourceSA();
+            DataContext = new MenadzerViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            Loaded += delegate { Focus(FocusState.Programmatic); };
-            DataContext = (UposlenikViewModel)e.Parameter;
         }
     }
 }

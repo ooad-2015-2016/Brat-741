@@ -17,13 +17,16 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         //UposlenikViewModel ima brigu i o generalisanom Uposlenik view-u i o view-ima koji se ticu registracije novih uposlenika
         private Uposlenik uposlenik;
 
+        private SplitViewModel splitView = new SplitViewModel();
+        public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
+
         public ICommand DodajUposlenika { get; set; }
         public ICommand AnalizirajIzvjestaj { get; set; }
         public ICommand Trzni { get; set; }
         public ICommand Register { get; set; }
         public Uposlenik Uposlenik { get { return uposlenik; } set { uposlenik = value; NotifyPropertyChanged("Uposlenik"); NotifyPropertyChanged("kontaktInfo"); } }
 
-        public INavigationService NavigationService { get; set; }
+        public NavigationService NavigationService { get; set; }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

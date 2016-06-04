@@ -32,36 +32,7 @@ namespace ProjekatSpijunskaAgencija.Views
             DataContext = new IzvjestajViewModel(mapa);
         }
         #endregion
-        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = this.DataContext as Frame;
-            if (frame?.CanGoBack == true)
-            {
-                frame.GoBack();
-            }
-        }
-
-        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            this.SplitView.IsPaneOpen = !this.SplitView.IsPaneOpen;
-        }
-
-        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (typeof(Frame) != typeof(Login))
-            {
-                this.Frame.Navigate(typeof(Login));
-            }
-        }
-
-        private void FriendsRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (typeof(Frame) != typeof(UposlenikView))
-            {
-                this.Frame.Navigate(typeof(UposlenikView));
-            }
-        }
+        
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
             longitudeBox.Visibility = Visibility.Visible;

@@ -24,7 +24,12 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
-
+        public KlijentViewModel(Klijent klijent)
+        {
+            this.klijent = klijent;
+            NavigationService = new NavigationService();
+            splitView = new SplitViewModel(NavigationService);
+        }
         public KlijentViewModel()
         {
             NavigationService = new NavigationService();

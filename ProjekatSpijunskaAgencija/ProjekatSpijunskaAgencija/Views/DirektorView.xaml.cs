@@ -28,5 +28,11 @@ namespace ProjekatSpijunskaAgencija.Views
             this.InitializeComponent();
             DataContext = new DirektorViewModel();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Loaded += delegate { Focus(FocusState.Programmatic); };
+            DataContext = (DirektorViewModel)e.Parameter;
+            NavigationCacheMode = NavigationCacheMode.Required;
+        }
     }
 }

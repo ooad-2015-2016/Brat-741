@@ -38,7 +38,14 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
-
+        public IzvjestajViewModel(Izvjestaj izvjestaj)
+        {
+            NavigationService = new NavigationService();
+            Lokacija = new RelayCommand<object>(lokacija, mozeLiSeLocirati);
+            this.izvjestaj = izvjestaj;
+            splitView = new SplitViewModel(NavigationService);
+            Mapa = new MapControl();
+        }
         public IzvjestajViewModel(MapControl mapa)
         {
             NavigationService = new NavigationService();

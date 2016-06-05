@@ -1,4 +1,5 @@
 ﻿using KompShopMVVM.KompShop.Helper;
+using ProjekatSpijunskaAgencija.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
     class MisijaViewModel : INotifyPropertyChanged
     {
         public NavigationService NavigationService { get; set; }
-
+        private Misija misija;
+        public Misija Misija { get { return misija; }set { misija = value; NotifyPropertyChanged("Misija"); } }
         private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
 
@@ -24,6 +26,13 @@ namespace ProjekatSpijunskaAgencija.ViewModels
 
         public MisijaViewModel()
         {
+            misija = new Misija();
+            NavigationService = new NavigationService();
+            splitView = new SplitViewModel(NavigationService);
+        }
+        public MisijaViewModel(Misija misija)
+        {
+            this.misija = misija;
             NavigationService = new NavigationService();
             splitView = new SplitViewModel(NavigationService);
         }

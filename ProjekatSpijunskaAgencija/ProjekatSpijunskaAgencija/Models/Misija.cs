@@ -8,7 +8,7 @@ namespace ProjekatSpijunskaAgencija.Models
 {
     public class Misija
     {
-        public List<Meta> Mete;
+        public List<Meta> mete;
         public float budzet { get; set; }
         public List<Izvjestaj> izvjestaji { get; set; }
         public Tim radnaGrupa { get; set; }

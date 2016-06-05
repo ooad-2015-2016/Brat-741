@@ -9,7 +9,18 @@ namespace ProjekatSpijunskaAgencija.Models
     public enum Fizikalnost { fizickoLice, pravnoLice }
     public class Klijent
     {
-        public string pristupniKod { get; set; }
+        private string _pristupniKod;
+        public string pristupniKod
+        {
+            get { return _pristupniKod; }
+            set
+            {
+                if (Helpers.Validacija.Broj(value))
+                    _pristupniKod = value;
+                else
+                    _pristupniKod = "";
+            }
+        }
         public Misija misija { get; set; }
         public Fizikalnost fizikalnost { get; set; }
         public FinalniIzvjestaj izvjestaj { get; set; }

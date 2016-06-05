@@ -25,6 +25,8 @@ Ova poruka će se samouništiti nakon 1.5 godina.
 
 ##### **Forma za Login**
 
+https://github.com/ooad-2015-2016/Brat-741/blob/master/ProjekatSpijunskaAgencija/ProjekatSpijunskaAgencija/Views/LoginView.xaml.cs
+
 ###### Username and Password
 
 U ova polja unosite ime vašeg korisničkog naloga i šifru koju ste napravili. Šifra mora sadržavati
@@ -38,6 +40,8 @@ prebačeni na novu formu za naručivanje misije gdje popunjavate pojedinosti o m
 misije.
 
 ##### **Forma za Kontakt**
+
+https://github.com/ooad-2015-2016/Brat-741/blob/master/ProjekatSpijunskaAgencija/ProjekatSpijunskaAgencija/Views/KontaktView.xaml.cs
  
 ###### Ime i prezime
 
@@ -52,6 +56,8 @@ Ovo polje je predviđeno za unos e-maila.
 Polje gdje upisujete vaš broj telefona.
 
 ##### **Forma za podnošenje izvještaja**
+
+https://github.com/ooad-2015-2016/Brat-741/blob/master/ProjekatSpijunskaAgencija/ProjekatSpijunskaAgencija/Views/IzvjestajView.xaml.cs
 
 Trenutna (demo) verzija forme za podnoešenje izvještaja se sadrži od informacije o stanju budžeta
 sa kojim agenti raspolažu na misiji i njihove trenutne lokacije.
@@ -69,6 +75,8 @@ ako dođe do nenadanih smetnji tokom misije.
 
 ##### **Forma za konektovanje sa Arduinom**
 
+https://github.com/ooad-2015-2016/Brat-741/blob/master/ProjekatSpijunskaAgencija/ProjekatSpijunskaAgencija/Views/ArduinoView.xaml.cs
+
 ###### Connection Method
 
 U ovoj padajućoj listi možete izabrati između 3 vrste konekcije Arduino uređaja sa vašim uređajem.
@@ -82,6 +90,8 @@ Izabirom ove opcije aplikacija sama automatski određuje na koji USB port je pri
 i daje korisniku kontrolu nad uređajem.
 
 ##### **Forma za Direktora**
+
+https://github.com/ooad-2015-2016/Brat-741/blob/master/ProjekatSpijunskaAgencija/ProjekatSpijunskaAgencija/Views/DirektorView.xaml.cs
 
 ###### Uposlenici
 

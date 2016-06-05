@@ -49,36 +49,34 @@
         </Grid.RowDefinitions>
         <ScrollViewer>
             <Grid x:Name="FirstGrid" Grid.Column="0">
-                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen = "{Binding Split.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen = "{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
                     <SplitView.Pane>
                         <StackPanel x:Name="SplitViewPanePanel">
-                            <RadioButton x:Name="BackRadioButton" Command="{Binding Split.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
-                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding Split.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
-                            <RadioButton x:Name="HomeRadioButton" Command="{Binding Split.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding Split.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                            <RadioButton x:Name="BackRadioButton" Command="{Binding SplitView.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
+                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding SplitView.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                            <RadioButton x:Name="HomeRadioButton" Command="{Binding SplitView.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
                         </StackPanel>
                     </SplitView.Pane>
                 </SplitView>
                 <TextBlock x:Name="textBlock" Text="{Binding NazivAgencije, Mode=OneTime}" Style="{ThemeResource BaseTextBlockStyle}" Margin="80,40,0,0" Width="120"/>
                 <Button x:Name="btnKontakt" Content="O Vama" Command ="{Binding KontaktInfo}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,40,0,0" Height="40" Width="120"/>
                 <Button x:Name="btnUposlenici" Content="Uposlenici" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,100,0,0" Height="40" Width="120"/>
-                <Button x:Name="btnIzvjestaji" Content="Izvjestaji" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,160,0,0" Height="40" Width="120"/>
-                <Button x:Name="btnMisije" Content="Misije" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,220,0,0" Height="40" Width="120"/>
+                <Button x:Name="btnIzvjestaji" Content="Izvjestaji" Command ="{Binding PrikaziIzvjestaje}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,160,0,0" Height="40" Width="120"/>
+                <Button x:Name="btnMisije" Content="Misije" Command ="{Binding PrikaziMisije}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,220,0,0" Height="40" Width="120"/>
 
             </Grid>
         </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="LightGray">
             <ListView
                 x:Name="listView"
+                Header="Lista objekata:"
                 HorizontalAlignment="Left"
-                Height="640"
+                Height="600"
                 VerticalAlignment="Top"
                 Width="513"
-                Margin="0,0,0,0"
-                ItemsSource="{Binding TrenutnaLista}"/>
-            <ListViewItem>
-                
-            </ListViewItem>
+                Margin="0,40,0,0"
+                ItemsSource="{Binding TrenutnaLista, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </Page>

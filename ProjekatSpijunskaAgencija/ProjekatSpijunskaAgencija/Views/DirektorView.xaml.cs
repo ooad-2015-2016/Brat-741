@@ -1,4 +1,5 @@
-﻿using ProjekatSpijunskaAgencija.ViewModels;
+﻿using ProjekatSpijunskaAgencija.Models;
+using ProjekatSpijunskaAgencija.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,7 @@ namespace ProjekatSpijunskaAgencija.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            
             Loaded += delegate { Focus(FocusState.Programmatic); };
             DataContext = (DirektorViewModel)e.Parameter;
             NavigationCacheMode = NavigationCacheMode.Required;

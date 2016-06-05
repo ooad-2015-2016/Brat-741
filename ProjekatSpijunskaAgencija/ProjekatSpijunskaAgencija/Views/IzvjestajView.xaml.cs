@@ -35,7 +35,9 @@ namespace ProjekatSpijunskaAgencija.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Loaded += delegate { Focus(FocusState.Programmatic); };
-            DataContext = (IzvjestajViewModel)e.Parameter;
+            var posrednik = (IzvjestajViewModel)e.Parameter;
+            DataContext = posrednik;
+            posrednik.Mapa = mapa;
             NavigationCacheMode = NavigationCacheMode.Required;
         }
         private void checkBox_Checked(object sender, RoutedEventArgs e)

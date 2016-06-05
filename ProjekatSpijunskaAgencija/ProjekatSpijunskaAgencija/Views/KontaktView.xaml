@@ -10,13 +10,13 @@
     <Grid Background="White" x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
         <ScrollViewer>
             <Grid x:Name="FirstGrid" Grid.Column="0">
-                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen = "{Binding Split.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen = "{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
                     <SplitView.Pane>
                         <StackPanel x:Name="SplitViewPanePanel">
-                            <RadioButton x:Name="BackRadioButton" Command="{Binding Split.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
-                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding Split.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
-                            <RadioButton x:Name="HomeRadioButton" Command="{Binding Split.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding Split.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                            <RadioButton x:Name="BackRadioButton" Command="{Binding SplitView.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
+                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding SplitView.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                            <RadioButton x:Name="HomeRadioButton" Command="{Binding SplitView.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
                         </StackPanel>
                     </SplitView.Pane>
                 </SplitView>

@@ -25,7 +25,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         private double _latitude;
         public double Longitude { get { return _longitude; } set { this._longitude = value; NotifyPropertyChanged("Longitude"); } }
         public double Latitude { get { return _latitude; } set { this._latitude = value; NotifyPropertyChanged("Latitude"); } }
-        MapControl Mapa;
+        public MapControl Mapa;
 
         private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }

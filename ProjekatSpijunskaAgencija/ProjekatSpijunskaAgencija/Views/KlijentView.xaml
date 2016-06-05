@@ -60,10 +60,27 @@
                         </StackPanel>
                     </SplitView.Pane>
                 </SplitView>
+                <TextBlock x:Name="imetxt" Style="{ThemeResource BaseTextBlockStyle}" Text="Ime" Margin="80,40,0,0" />
+                <TextBox x:Name="txtIme" Margin="180,40,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Klijent.kontaktInfo.ime, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{StaticResource moje}"/>
+                <TextBlock x:Name="imetxt1" Style="{ThemeResource BaseTextBlockStyle}" Text="Pristupni Kod" Margin="80,110,0,0" />
+                <TextBox x:Name="txtIme1" Margin="180,110,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Klijent.pristupniKod, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{StaticResource moje}"/>
+                <Button x:Name="button" Content="Status Misije" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,240,0,0" Command="{Binding StatusMisije}"/>
+                <Button x:Name="button_Copy" Content="Kreiraj Misiju" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,190,0,0" Command="{Binding KreirajMisiju}"/>
             </Grid>
         </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="White">
+            <ListView
+                x:Name="listView"
+                HorizontalAlignment="Left"
+                Height="100"
+                Header="Lista misija:"
+                VerticalAlignment="Top"
+                Width="100"
+                ItemsSource="{Binding lista, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
+        
     </Grid>
 </Page>

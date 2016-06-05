@@ -84,7 +84,7 @@
 
             </Grid>
         </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="White">
 
         </Grid>
     </Grid>

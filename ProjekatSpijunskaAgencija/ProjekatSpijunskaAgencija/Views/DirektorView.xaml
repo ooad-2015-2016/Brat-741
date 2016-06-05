@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
     <Grid Background="White" x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Auto">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -64,6 +65,7 @@
                 <Button x:Name="btnUposlenici" Content="Uposlenici" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,100,0,0" Height="40" Width="120"/>
                 <Button x:Name="btnIzvjestaji" Content="Izvjestaji" Command ="{Binding PrikaziIzvjestaje}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,160,0,0" Height="40" Width="120"/>
                 <Button x:Name="btnMisije" Content="Misije" Command ="{Binding PrikaziMisije}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,220,0,0" Height="40" Width="120"/>
+                <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="300,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25" Click="Help_Click"/>
 
             </Grid>
         </ScrollViewer>

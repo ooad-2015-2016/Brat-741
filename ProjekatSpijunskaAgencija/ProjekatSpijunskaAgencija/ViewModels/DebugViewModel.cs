@@ -27,6 +27,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public ICommand MisijaView { get; set; }
         public ICommand TimView { get; set; }
         public ICommand UposlenikView { get; set; }
+        public ICommand ConnectionPage { get; set; }
 
         private void direktorView(object sender)  { NavigationService.Navigate(typeof(DirektorView),  new DirektorViewModel(direktor)); }
         private void izvjestajView(object sender) { NavigationService.Navigate(typeof(IzvjestajView), new IzvjestajViewModel(izvjestaj)); }
@@ -37,6 +38,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         private void misijaView(object sender)    { NavigationService.Navigate(typeof(MisijaView),    new MisijaViewModel(misija)); }
         private void timView(object sender)       { NavigationService.Navigate(typeof(TimView),       new TimViewModel(tim)); }
         private void uposlenikView(object sender) { NavigationService.Navigate(typeof(UposlenikView), new UposlenikViewModel(uposlenik)); }
+        private void connectionPage(object sender) { NavigationService.Navigate(typeof(ConnectionPage)); }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)
@@ -58,6 +61,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             MisijaView = new RelayCommand<object>(misijaView);
             TimView = new RelayCommand<object>(timView);
             UposlenikView = new RelayCommand<object>(uposlenikView);
+            ConnectionPage = new RelayCommand<object>(connectionPage);
         }
 
         #region HARD ROCK CODE ZA VLASTITO DOBRO NE OTVARATI
@@ -160,6 +164,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             },
             misija=new Misija
             {
+                hashID="45545",
                 budzet=1200,
                 izvjestaji=new List<Izvjestaj>()
                 {

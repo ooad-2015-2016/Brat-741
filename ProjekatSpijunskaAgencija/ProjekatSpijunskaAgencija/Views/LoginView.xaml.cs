@@ -45,7 +45,7 @@ namespace ProjekatSpijunskaAgencija.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Loaded += delegate { Focus(FocusState.Programmatic); };
-            DataContext = (DirektorViewModel)e.Parameter;
+            if(e.Parameter!="")DataContext = (LoginViewModel)e.Parameter;
             NavigationCacheMode = NavigationCacheMode.Required;
             #if DEBUG
             //this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());

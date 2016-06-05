@@ -6,43 +6,86 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Resources>
-        
-    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen="{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
-            <SplitView.Pane>
-                <StackPanel x:Name="SplitViewPanePanel">
-                    <RadioButton x:Name="BackRadioButton" Command="{Binding SplitView.Back}"  Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
-                    <RadioButton x:Name="HamburgerRadioButton" Command="{Binding SplitView.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
-                    <RadioButton x:Name="HomeRadioButton" Command="{Binding SplitView.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                    <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
-                </StackPanel>
-            </SplitView.Pane>
-        </SplitView>
-        
-        <TextBlock x:Name="imetxt" Style="{ThemeResource BaseTextBlockStyle}" Text="Ime" Margin="80,80,0,0" />
-        <TextBlock x:Name="prezimetxt" Margin="80,140,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="Prezime"/>
-        <TextBlock x:Name="emailtxt" Margin="80,200,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="e-mail"/>
-        <TextBlock x:Name="brojteltxt" Margin="80,260,0,0" Text="Broj Telefona" Style="{ThemeResource BaseTextBlockStyle}"/>
-        <TextBlock x:Name="idbrojtxt" Margin="80,320,0,0" Text="Id Broj" Style="{ThemeResource BaseTextBlockStyle}"/>
-        <TextBlock x:Name="textBlock" Margin="400,80,0,0" Style="{ThemeResource BaseTextBlockStyle}"
-                    Text="{Binding Uposlenik.izvjestaji[0].opis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    <Grid Background="White" x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.Margin" Value="0"/>
+                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="auto"/>
+                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="*"/>
+                        <Setter Target="FirstGrid.Margin" Value="0 0 0 0"/>
+                        <Setter Target="SecondGrid.Margin" Value="0 0 0 0"/>
+                        <Setter Target="SecondGrid.(Grid.Column)" Value="1"/>
+                        <Setter Target="SecondGrid.(Grid.Row)" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainGrid.Margin" Value="0"/>
+                        <Setter Target="FirstGrid.Margin" Value="0 0 0 0"/>
+                        <Setter Target="SecondGrid.Margin" Value="0 0 0 0"/>
+                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="*"/>
+                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="auto"/>
+                        <Setter Target="SecondGrid.(Grid.Column)" Value="0"/>
+                        <Setter Target="SecondGrid.(Grid.Row)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <Grid x:Name="FirstGrid" Grid.Column="0">
+                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen="{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <SplitView.Pane>
+                        <StackPanel x:Name="SplitViewPanePanel">
+                            <RadioButton x:Name="BackRadioButton" Command="{Binding SplitView.Back}"  Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
+                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding SplitView.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                            <RadioButton x:Name="HomeRadioButton" Command="{Binding SplitView.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                        </StackPanel>
+                    </SplitView.Pane>
+                </SplitView>
+                <TextBlock x:Name="imetxt" Style="{ThemeResource BaseTextBlockStyle}" Text="Ime" Margin="80,80,0,0" />
+                <TextBlock x:Name="prezimetxt" Margin="80,140,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="Prezime"/>
+                <TextBlock x:Name="emailtxt" Margin="80,200,0,0" Style="{ThemeResource BaseTextBlockStyle}" Text="e-mail"/>
+                <TextBlock x:Name="brojteltxt" Margin="80,260,0,0" Text="Broj Telefona" Style="{ThemeResource BaseTextBlockStyle}"/>
+                <TextBlock x:Name="idbrojtxt" Margin="80,320,0,0" Text="Id Broj" Style="{ThemeResource BaseTextBlockStyle}"/>
+                <TextBlock x:Name="textBlock" Margin="400,80,0,0" Style="{ThemeResource BaseTextBlockStyle}"
+                            Text="{Binding Uposlenik.izvjestaji[0].opis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBox x:Name="txtIme" Margin="180,80,0,0" Style="{ThemeResource BaseTextBoxStyle}"
-                	Text="{Binding Uposlenik.kontaktInfo.ime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="{StaticResource moje}"/>
-        <TextBox x:Name="txtPrezime" Margin="180,140,0,0" Style="{ThemeResource BaseTextBoxStyle}"
-                	Text="{Binding Uposlenik.kontaktInfo.prezime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="txtEmail" Margin="180,200,0,0" Style="{ThemeResource BaseTextBoxStyle}"
-                	Text="{Binding Uposlenik.kontaktInfo.email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="txtBrojTel" Margin="180,260,0,0" Style="{ThemeResource BaseTextBoxStyle}"
-                	Text="{Binding Uposlenik.kontaktInfo.brojTel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="txtIdBroj" Margin="180,320,0,0" Style="{ThemeResource BaseTextBoxStyle}"
-                	Text="{Binding Uposlenik.idBroj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtIme" Margin="180,80,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Uposlenik.kontaktInfo.ime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="{StaticResource moje}"/>
+                <TextBox x:Name="txtPrezime" Margin="180,140,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Uposlenik.kontaktInfo.prezime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtEmail" Margin="180,200,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Uposlenik.kontaktInfo.email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtBrojTel" Margin="180,260,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Uposlenik.kontaktInfo.brojTel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtIdBroj" Margin="180,320,0,0" Style="{ThemeResource BaseTextBoxStyle}"
+                	        Text="{Binding Uposlenik.idBroj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Button x:Name="button" Content="Trzni" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,400,0,0" Height="40" Width="100" Command="{Binding Trzni}"/>
-        <Button x:Name="registriraj" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,400,0,0" Height="40" Width="100" Command="{Binding Register}" Visibility="{Binding Visible}"/>
+                <Button x:Name="button" Content="Trzni" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,400,0,0" Height="40" Width="100" Command="{Binding Trzni}"/>
+                <Button x:Name="registriraj" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,400,0,0" Height="40" Width="100" Command="{Binding Register}" Visibility="{Binding Visible}"/>
 
+            </Grid>
+        </ScrollViewer>
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+
+        </Grid>
     </Grid>
 </Page>

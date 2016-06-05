@@ -122,8 +122,10 @@
     <Compile Include="Models\Tim.cs" />
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DirektorViewModel.cs" />
     <Compile Include="ViewModels\IzvjestajViewModel.cs" />
     <Compile Include="ViewModels\KlijentViewModel.cs" />
+    <Compile Include="ViewModels\KontaktViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenadzerViewModel.cs" />
     <Compile Include="ViewModels\MisijaViewModel.cs" />
@@ -137,11 +139,17 @@
     <Compile Include="Views\ConnectionPage.xaml.cs">
       <DependentUpon>ConnectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DirektorView.xaml.cs">
+      <DependentUpon>DirektorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\IzvjestajView.xaml.cs">
       <DependentUpon>IzvjestajView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\KlijentView.xaml.cs">
       <DependentUpon>KlijentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KontaktView.xaml.cs">
+      <DependentUpon>KontaktView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -195,11 +203,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DirektorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\IzvjestajView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\KlijentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KontaktView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

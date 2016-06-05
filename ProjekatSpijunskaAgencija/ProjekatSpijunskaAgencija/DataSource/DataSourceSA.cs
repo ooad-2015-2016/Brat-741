@@ -17,6 +17,11 @@ namespace ProjekatSpijunskaAgencija.DataSource
         private static List<Misija> _misije = new List<Misija>();
         private static List<Tim> _timovi = new List<Tim>();
         private static List<Uposlenik> _uposlenici = new List<Uposlenik>();
+        
+        public static int dajBrojUposlenika()
+        {
+            return _uposlenici.Count;
+        }
 
         public static Uposlenik dajUposlenika(string username, string password)
         {
@@ -27,7 +32,10 @@ namespace ProjekatSpijunskaAgencija.DataSource
             }
             return rez;
         }
-
+        public static List<Uposlenik> dajSveUposlenike()
+        {
+            return _uposlenici;
+        }
         public async static void dodajUposlenika(Uposlenik uposlenik)
         {
             if (_uposlenici.Count<Uposlenik>(k => k.kontaktInfo.prezime == uposlenik.kontaktInfo.prezime && k.kontaktInfo.ime==uposlenik.kontaktInfo.ime) == 0)

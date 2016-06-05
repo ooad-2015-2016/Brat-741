@@ -33,7 +33,7 @@ namespace ProjekatSpijunskaAgencija.Views
         public LoginView()
         {
             this.InitializeComponent();
-            DataSourceSA.ucitajPodatke();
+            
             
             DataContext = dcontext;
         }

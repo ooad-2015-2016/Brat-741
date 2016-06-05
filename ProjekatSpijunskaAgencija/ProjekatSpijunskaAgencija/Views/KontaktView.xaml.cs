@@ -21,19 +21,19 @@ namespace ProjekatSpijunskaAgencija.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class TimView : Page
+    public sealed partial class KontaktView : Page
     {
-        public TimView()
+        public KontaktView()
         {
             this.InitializeComponent();
-            DataContext = new TimViewModel();
+            DataContext = new KontaktViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Loaded += delegate { Focus(FocusState.Programmatic); };
-            DataContext = (TimViewModel)e.Parameter;
+            DataContext = (KontaktViewModel)e.Parameter;
         }
     }
 }

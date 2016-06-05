@@ -45,6 +45,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             RegisterClick = new RelayCommand<object>(register_Click);
             username = "";
             password = "";
+            DataSourceSA.ucitajPodatke();
         }
 
         public async void login_Click(object sender)
@@ -52,6 +53,19 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             //uklanja enter iz teksta, koji je smetao kada se pritisne enter za login
             username = Regex.Replace(username, @"\t|\n|\r", "");
             password = Regex.Replace(password, @"\t|\n|\r", "");
+
+            if (DataSourceSA.dajBrojUposlenika() == 0)
+            {
+                MessageDialog mdialog = new MessageDialog("Vi ste prvi korisnik programa, te mozete kreirati novu Spijunsku Agenciju.");
+                await mdialog.ShowAsync();
+                Direktor direktor = new Direktor()
+                {
+                    username = this.username,
+                    sifra = this.password
+                };
+                NavigationService.Navigate(typeof(DirektorView), new DirektorViewModel(direktor));
+            }
+
             Uposlenik uposlenik = DataSourceSA.dajUposlenika(username, password);
             if (uposlenik != null)
             {

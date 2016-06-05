@@ -21,17 +21,17 @@
                 </StackPanel>
             </SplitView.Pane>
         </SplitView>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="104,102,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="104,152,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="75,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="75,130,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
 
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="33" Margin="232,102,0,0" 
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="33" Margin="203,80,0,0" 
                  Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="127" AcceptsReturn="True" PlaceholderText="Username"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="232,152,0,0" 
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="203,130,0,0" 
                  Password="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  PlaceholderText="********"  VerticalAlignment="Top" Height="33" Width="127" KeyDown="txtPassword_KeyDown"/>
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="263,202,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}"/>
-        <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="263,252,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}"/>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}"/>
+        <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}"/>
 
     </Grid>
 </Page>

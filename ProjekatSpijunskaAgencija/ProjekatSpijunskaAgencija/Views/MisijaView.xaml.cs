@@ -29,5 +29,11 @@ namespace ProjekatSpijunskaAgencija.Views
             DataContext = new MisijaViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Loaded += delegate { Focus(FocusState.Programmatic); };
+            DataContext = (MisijaViewModel)e.Parameter;
+        }
     }
 }

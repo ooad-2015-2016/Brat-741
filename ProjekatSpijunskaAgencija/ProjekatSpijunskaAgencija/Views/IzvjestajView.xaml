@@ -60,6 +60,8 @@
                 <Button x:Name="button" Content="Dobavi Lokaciju" HorizontalAlignment="Left" Margin="163,401,0,0" VerticalAlignment="Top" Width="128" Command="{Binding Lokacija}" Height="32"/>
                 <CheckBox x:Name="checkBox" Content="Lokacija" HorizontalAlignment="Left" Margin="122,271,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" IsChecked="True" Height="32" Width="120"/>
                 <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="120,70,0,0" TextWrapping="Wrap" Text="Podnošenje izvještaja" VerticalAlignment="Top" FontSize="24" Height="32" Width="225"/>
+                <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="360,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25" Click="Help_Click"/>
+
                 <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" Grid.ColumnSpan="1" IsPaneOpen = "{Binding SplitView.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,720,0">
                     <SplitView.Pane>
                         <StackPanel x:Name="SplitViewPanePanel">

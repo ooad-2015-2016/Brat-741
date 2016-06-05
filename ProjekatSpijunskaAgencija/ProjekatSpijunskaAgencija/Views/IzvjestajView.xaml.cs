@@ -57,5 +57,20 @@ namespace ProjekatSpijunskaAgencija.Views
             textBlock_Copy.Visibility = Visibility.Collapsed;
             button.Visibility = Visibility.Collapsed;
         }
+
+        private async void Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Forma za podnošenje izvještaja"+
+"\nTrenutna(demo) verzija forme za podnoešenje izvještaja se sadrži od informacije o stanju budžeta "+
+"sa kojim agenti raspolažu na misiji i njihove trenutne lokacije."+
+"\nStanje budžeta"+
+
+"U textbox se unosi trenutno stanje budžeta. Ova informacija pomaže Direktoru i Menadžeru da znaju da li je misija prevazišla predviđena sredstva."+
+"\nDobavi lokaciju"+
+
+"\nKlikom na ovu opciju će vam u poljima za Longitude i Latitude biti ispisane vaše tačne geografske koordinate i na mapi će vaša lokacija"+
+" biti pingovana tako da Direktor može poslati tim za evakuaciju ako dođe do nenadanih smetnji tokom misije.");
+            await md.ShowAsync();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace ProjekatSpijunskaAgencija.Models
         public float budzet { get; set; }
         public List<Izvjestaj> izvjestaji { get; set; }
         public Tim radnaGrupa { get; set; }
-
+        public string hashID { get; set; }
         //public promijeniBudzet()
         public void abortMisije(String razlog)
         {

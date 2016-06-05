@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    public enum uspjehEnum { }
+    public enum uspjehEnum { uspjesna, nijeuspjesna }
     public class FinalniIzvjestaj : Izvjestaj
     {
         public DateTime pocetakMisije { get; set; }

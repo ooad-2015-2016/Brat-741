@@ -26,6 +26,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public string Password { get { return password; } set { password = value; NotifyPropertyChanged("Password"); } }
         public ICommand LoginClick { get; set; }
         public ICommand RegisterClick { get; set; }
+        public ICommand NoviKlijent { get; set; }
 
         private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
@@ -43,9 +44,15 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             splitView = new SplitViewModel(NavigationService);
             LoginClick = new RelayCommand<object>(login_Click);
             RegisterClick = new RelayCommand<object>(register_Click);
+            NoviKlijent = new RelayCommand<object>(noviKlijent);
             username = "";
             password = "";
             DataSourceSA.ucitajPodatke();
+        }
+
+        public void noviKlijent(object sender)
+        {
+            NavigationService.Navigate(typeof(KlijentView));
         }
 
         public async void login_Click(object sender)

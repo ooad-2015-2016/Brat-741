@@ -17,12 +17,8 @@ namespace ProjekatSpijunskaAgencija.DataSource
         private static List<Misija> _misije = new List<Misija>();
         private static List<Tim> _timovi = new List<Tim>();
         private static List<Uposlenik> _uposlenici = new List<Uposlenik>();
-        
-        public static int dajBrojUposlenika()
-        {
-            return _uposlenici.Count;
-        }
-
+        #region Uposlenici
+        public static int dajBrojUposlenika() { return _uposlenici.Count; }
         public static Uposlenik dajUposlenika(string username, string password)
         {
             Uposlenik rez = null;
@@ -48,7 +44,65 @@ namespace ProjekatSpijunskaAgencija.DataSource
                 await md.ShowAsync();
             }
         }
-     
+        #endregion
+        #region Timovi
+        public static int dajBrojTimova() { return _uposlenici.Count; }
+        public static Tim dajTim(int index)
+        {
+            //Tim rez = null;
+            //foreach (var k in _timovi)
+            //{
+            //    if (k.index00x == index) rez = new Tim();
+            //    throw Exception;
+            //}
+            return null;
+        }
+        public static List<Tim> dajSveTimove()
+        {
+            return _timovi;
+        }
+        public async static void dodajTim(Tim tim)
+        {
+            if (_timovi.Count<Tim>(k => k.index00x == tim.index00x) == 0)
+            {
+                _timovi.Add(tim);
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog("Uposlenik vec postoji");
+                await md.ShowAsync();
+            }
+        }
+        #endregion
+        #region Misije
+        public static int dajBrojMisija() { return _uposlenici.Count; }
+        public static Misija dajMisiju(int index)
+        {
+            //Tim rez = null;
+            //foreach (var k in _timovi)
+            //{
+            //    if (k.index00x == index) rez = new Tim();
+            //    throw Exception;
+            //}
+            return null;
+        }
+        public static List<Misija> dajSveMisije()
+        {
+            return _misije;
+        }
+        public async static void dodajMisiju(Misija misija)
+        {
+            if (_misije.Count<Misija>(k => k.radnaGrupa.index00x == misija.radnaGrupa.index00x) == 0)
+            {
+                _misije.Add(misija);
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog("Uposlenik vec postoji");
+                await md.ShowAsync();
+            }
+        }
+        #endregion
         public async static void ucitajPodatke()
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

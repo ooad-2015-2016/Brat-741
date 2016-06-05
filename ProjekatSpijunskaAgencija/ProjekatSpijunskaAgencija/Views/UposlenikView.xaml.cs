@@ -29,7 +29,7 @@ namespace ProjekatSpijunskaAgencija.Views
         public UposlenikView()
         {
             this.InitializeComponent();
-            DataContext = new DataSourceSA();
+            DataContext = new UposlenikViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 

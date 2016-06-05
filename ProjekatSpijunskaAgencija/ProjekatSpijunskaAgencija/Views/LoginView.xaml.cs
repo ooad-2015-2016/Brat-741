@@ -40,12 +40,17 @@ namespace ProjekatSpijunskaAgencija.Views
         
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+            //this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
         }
 
         private void txtPassword_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter) dcontext.login_Click(sender);
+        }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ConnectionPage));
         }
     }
 }

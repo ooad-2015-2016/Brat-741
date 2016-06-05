@@ -71,5 +71,14 @@ namespace ProjekatSpijunskaAgencija.DataSource
 
             await Windows.Storage.FileIO.WriteTextAsync(uposlenici, json);
         }
+        public static Misija vratiMisiju(string hashID)
+        {
+            foreach (var x in _misije)
+            {
+                if (x.hashID == hashID)
+                    return x;
+            }
+            return null;
+        }
     }
 }

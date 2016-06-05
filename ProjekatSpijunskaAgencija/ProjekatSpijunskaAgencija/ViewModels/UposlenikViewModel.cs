@@ -1,4 +1,5 @@
 ﻿using KompShopMVVM.KompShop.Helper;
+using Microsoft.Maker.RemoteWiring;
 using ProjekatSpijunskaAgencija.DataSource;
 using ProjekatSpijunskaAgencija.Models;
 using ProjekatSpijunskaAgencija.Views;
@@ -49,6 +50,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public UposlenikViewModel()
         {
             Uposlenik = new Uposlenik();
+            externi();
             Setup();
         }
         public UposlenikViewModel(Uposlenik parameter) 
@@ -65,6 +67,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
            
             Uposlenik = parameter;
             Setup();
+            externi();
         }
         #endregion
         public void register(object parameter)
@@ -85,6 +88,15 @@ namespace ProjekatSpijunskaAgencija.ViewModels
                     brojTel = "3456"
                 }
             };
+        }
+        public void externi()
+        {
+           // if (App.Arduino != null)
+            {
+                App.Arduino.digitalWrite(3, (((int)(uposlenik.nivoPristupa)) < 1) ? PinState.HIGH : PinState.LOW);
+                App.Arduino.digitalWrite(4, (((int)(uposlenik.nivoPristupa)) < 2) ? PinState.HIGH : PinState.LOW);
+                App.Arduino.digitalWrite(5, (((int)(uposlenik.nivoPristupa)) < 3) ? PinState.HIGH : PinState.LOW);
+            }
         }
         public void analizirajIzvjestaj(object parameter)
         {

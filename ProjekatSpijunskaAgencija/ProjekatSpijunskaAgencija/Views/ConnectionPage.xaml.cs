@@ -306,9 +306,9 @@ namespace ProjekatSpijunskaAgencija.Views
                 //OVDJE DODATI ONAJ ENUM DA PALI LEDICE KOJE TREBA!!!!
 
 
-                App.Arduino.digitalWrite(3, PinState.HIGH);
-                App.Arduino.digitalWrite(4, PinState.HIGH);
-                App.Arduino.digitalWrite(5, PinState.LOW);
+                //App.Arduino.digitalWrite(3, PinState.HIGH);
+                //App.Arduino.digitalWrite(4, PinState.HIGH);
+                //App.Arduino.digitalWrite(5, PinState.LOW);
                 if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
             }));
         }

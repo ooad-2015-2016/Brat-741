@@ -34,5 +34,6 @@
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}" Background="#33040404"/>
         <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}" Background="#33000000"/>
         <Button x:Name="button" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,280,0,0" VerticalAlignment="Top" Width="96" Background="#33000000"/>
+        <Button x:Name="button_Copy" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,330,0,0" VerticalAlignment="Top" Width="96" Background="#33000000" Click="button_Copy_Click"/>
     </Grid>
 </Page>

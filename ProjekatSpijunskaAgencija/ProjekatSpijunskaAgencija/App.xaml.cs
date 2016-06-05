@@ -148,6 +148,7 @@ namespace ProjekatSpijunskaAgencija
                 Arduino.digitalWrite(3, PinState.LOW);
                 Arduino.digitalWrite(4, PinState.LOW);
                 Arduino.digitalWrite(5, PinState.LOW);
+                Arduino.digitalWrite(6, PinState.LOW);
             }
             deferral.Complete();
         }

@@ -101,6 +101,7 @@
     <Compile Include="DataSource\DataSourceSA.cs" />
     <Compile Include="Communication\Connection.cs" />
     <Compile Include="Communication\Connections.cs" />
+    <Compile Include="Helpers\Validacija.cs" />
     <Compile Include="Helpers\INavigationService.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />

@@ -66,7 +66,7 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             MessageDialog md = new MessageDialog("Username and Password: U ova polja unosite ime vašeg korisničkog naloga i šifru koju ste napravili."
                 +"\nŠifra mora sadržavati minimalno sedam karaktera. Ako ste novi radnik(tj.niste registrovani u bazu) klikom na Login dugme bit ćete prebačeni na formu za registraciju gdje"
-                +"će te morati popuniti osnovne podatke o sebi. Novi klijent Ovu opciju možete izabrati ako želite naručiti novu misiju.Klikom na dugme "
+                +" će te morati popuniti osnovne podatke o sebi. Novi klijent Ovu opciju možete izabrati ako želite naručiti novu misiju.Klikom na dugme "
                 +"Novi klijent bivate prebačeni na novu formu za naručivanje misije gdje popunjavate pojedinosti o meti i način izvršavanja misije.");
             await md.ShowAsync();
         }

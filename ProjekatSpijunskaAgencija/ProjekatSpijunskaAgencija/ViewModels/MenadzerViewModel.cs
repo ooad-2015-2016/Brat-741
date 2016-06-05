@@ -1,4 +1,5 @@
 ﻿using KompShopMVVM.KompShop.Helper;
+using ProjekatSpijunskaAgencija.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
     class MenadzerViewModel : INotifyPropertyChanged
     {
         public NavigationService NavigationService { get; set; }
-
+        private Menadzer menadzer;
+        public Menadzer Menadzer { get { return menadzer; } set { menadzer = value; NotifyPropertyChanged("Menadzer"); } }
         private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
 
@@ -24,6 +26,13 @@ namespace ProjekatSpijunskaAgencija.ViewModels
 
         public MenadzerViewModel()
         {
+            NavigationService = new NavigationService();
+            splitView = new SplitViewModel(NavigationService);
+        }
+
+        public MenadzerViewModel(Menadzer menadzer)
+        {
+            this.menadzer = menadzer;
             NavigationService = new NavigationService();
             splitView = new SplitViewModel(NavigationService);
         }

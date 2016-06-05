@@ -40,7 +40,16 @@ namespace ProjekatSpijunskaAgencija.Views
         
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            //
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Loaded += delegate { Focus(FocusState.Programmatic); };
+            DataContext = (DirektorViewModel)e.Parameter;
+            NavigationCacheMode = NavigationCacheMode.Required;
+            #if DEBUG
             //this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
+            #endif
         }
 
         private void txtPassword_KeyDown(object sender, KeyRoutedEventArgs e)

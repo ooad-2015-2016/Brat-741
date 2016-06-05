@@ -34,7 +34,9 @@ namespace ProjekatSpijunskaAgencija.Helpers
 #if DEBUG
             return true;
 #endif
+#pragma warning disable CS0162 // Unreachable code detected
             return match.Success;
+#pragma warning restore CS0162 // Unreachable code detected
         }
     }
 }

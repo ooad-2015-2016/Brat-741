@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatSpijunskaAgencija.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace ProjekatSpijunskaAgencija.Views
         public DebugView()
         {
             this.InitializeComponent();
+            DataContext = new DebugViewModel();
         }
     }
 }

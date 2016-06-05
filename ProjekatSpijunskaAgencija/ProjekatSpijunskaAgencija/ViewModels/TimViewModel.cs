@@ -1,4 +1,5 @@
 ﻿using KompShopMVVM.KompShop.Helper;
+using ProjekatSpijunskaAgencija.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,8 @@ namespace ProjekatSpijunskaAgencija.ViewModels
     class TimViewModel : INotifyPropertyChanged
     {
         public NavigationService NavigationService { get; set; }
-
+        private Tim tim;
+        public Tim Tim { get { return tim; } set { tim = value; NotifyPropertyChanged("Tim"); } }
         private SplitViewModel splitView;
         public SplitViewModel SplitView { get { return splitView; } set { splitView = value; NotifyPropertyChanged("SplitView"); } }
 
@@ -24,6 +26,14 @@ namespace ProjekatSpijunskaAgencija.ViewModels
 
         public TimViewModel()
         {
+            NavigationService = new NavigationService();
+            splitView = new SplitViewModel(NavigationService);
+            tim = new Tim();
+        }
+
+        public TimViewModel(Tim tim)
+        {
+            this.tim = tim;
             NavigationService = new NavigationService();
             splitView = new SplitViewModel(NavigationService);
         }

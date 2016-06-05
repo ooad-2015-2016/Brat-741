@@ -32,7 +32,12 @@ namespace ProjekatSpijunskaAgencija.Views
             DataContext = new IzvjestajViewModel(mapa);
         }
         #endregion
-        
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Loaded += delegate { Focus(FocusState.Programmatic); };
+            DataContext = (IzvjestajViewModel)e.Parameter;
+            NavigationCacheMode = NavigationCacheMode.Required;
+        }
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
             longitudeBox.Visibility = Visibility.Visible;

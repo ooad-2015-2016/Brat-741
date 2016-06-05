@@ -8,15 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="White" x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Auto">
-        <Button x:Name="button" Content="DirektorView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,120,0,0" Height="40" Width="120"/>
-        <Button x:Name="button1" Content="IzvjestajView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,200,0,0" Height="40" Width="120"/>
-        <Button x:Name="button2" Content="KlijentView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,280,0,0" Height="40" Width="120"/>
-        <Button x:Name="button3" Content="KontaktView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,360,0,0" Height="40" Width="120"/>
-        <Button x:Name="button4" Content="LoginView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,440,0,0" Height="40" Width="120"/>
-        <Button x:Name="button5" Content="MenadzerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,120,0,0" Height="40" Width="120"/>
-        <Button x:Name="button6" Content="MisijaView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,200,0,0" Height="40" Width="120"/>
-        <Button x:Name="button7" Content="TimView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,280,0,0" Height="40" Width="120"/>
-        <Button x:Name="button8" Content="UposlenikView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,360,0,0" Height="40" Width="120"/>
-        <Button x:Name="button9" Content="ConnectionPage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,440,0,0" Height="40" Width="120"/>
+        <Button x:Name="button"  Command="{Binding DirektorView}" Content="DirektorView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,120,0,0" Height="40" Width="120"/>
+        <Button x:Name="button1" Command="{Binding IzvjestajView}" Content="IzvjestajView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,200,0,0" Height="40" Width="120"/>
+        <Button x:Name="button2" Command="{Binding KlijentView}" Content="KlijentView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,280,0,0" Height="40" Width="120"/>
+        <Button x:Name="button3" Command="{Binding KontaktView}" Content="KontaktView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,360,0,0" Height="40" Width="120"/>
+        <Button x:Name="button4" Command="{Binding LoginView}" Content="LoginView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,440,0,0" Height="40" Width="120"/>
+        <Button x:Name="button5" Command="{Binding MenadzerView}" Content="MenadzerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,120,0,0" Height="40" Width="120"/>
+        <Button x:Name="button6" Command="{Binding MisijaView}" Content="MisijaView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,200,0,0" Height="40" Width="120"/>
+        <Button x:Name="button7" Command="{Binding TimView}" Content="TimView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,280,0,0" Height="40" Width="120"/>
+        <Button x:Name="button8" Command="{Binding UposlenikView}" Content="UposlenikView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,360,0,0" Height="40" Width="120"/>
+        <Button x:Name="button9" Command="{Binding ConnectionPage}"  Content="ConnectionPage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,440,0,0" Height="40" Width="120"/>
     </Grid>
 </Page>

@@ -1,5 +1,4 @@
-﻿using ProjekatSpijunskaAgencija.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,24 +20,11 @@ namespace ProjekatSpijunskaAgencija.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Tester : Page
+    public sealed partial class DebugView : Page
     {
-        public Tester()
+        public DebugView()
         {
             this.InitializeComponent();
-        }
-        private void SplitViewButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ContentDialog d = new ContentDialog();
-            d.Title = "Not implemented";
-            d.Content = "The buttons are for illustrative purposes only and do not perform any action";
-            d.PrimaryButtonText = "OK";
-            await d.ShowAsync();
         }
     }
 }

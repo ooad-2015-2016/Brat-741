@@ -26,7 +26,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public ICommand Register { get; set; }
         public Uposlenik Uposlenik { get { return uposlenik; } set { uposlenik = value; NotifyPropertyChanged("Uposlenik"); NotifyPropertyChanged("kontaktInfo"); } }
 
-        public NavigationService NavigationService { get; set; }
+        public INavigationService NavigationService { get; set; }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,7 +40,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         public void Setup()
         {
             NavigationService = new NavigationService();
-            splitView = new SplitViewModel(NavigationService);
+            splitView = new SplitViewModel();
             DodajUposlenika = new RelayCommand<object>(dodajUposlenika, mozeLiSeDodatiUposlenik);
             AnalizirajIzvjestaj = new RelayCommand<object>(analizirajIzvjestaj, mozeLiSeAnaliziratiIzvjestaj);
             Trzni = new RelayCommand<object>(trzni);

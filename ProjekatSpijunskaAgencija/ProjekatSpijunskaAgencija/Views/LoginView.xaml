@@ -20,6 +20,7 @@
                     <RadioButton x:Name="FriendsRadioButton" Command="{Binding SplitView.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
                 </StackPanel>
             </SplitView.Pane>
+            
         </SplitView>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="75,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="75,130,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
@@ -30,8 +31,8 @@
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="203,130,0,0" 
                  Password="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  PlaceholderText="********"  VerticalAlignment="Top" Height="33" Width="127" KeyDown="txtPassword_KeyDown"/>
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}"/>
-        <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}"/>
-
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}" Background="#33040404"/>
+        <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}" Background="#33000000"/>
+        <Button x:Name="button" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,280,0,0" VerticalAlignment="Top" Width="96" Background="#33000000"/>
     </Grid>
 </Page>

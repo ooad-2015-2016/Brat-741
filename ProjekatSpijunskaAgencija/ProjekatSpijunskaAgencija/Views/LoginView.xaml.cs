@@ -41,7 +41,6 @@ namespace ProjekatSpijunskaAgencija.Views
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             this.Frame.BackStack.Remove(this.Frame.BackStack.LastOrDefault());
-            
         }
 
         private void txtPassword_KeyDown(object sender, KeyRoutedEventArgs e)

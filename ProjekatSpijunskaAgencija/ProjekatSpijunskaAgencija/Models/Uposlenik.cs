@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjekatSpijunskaAgencija.Models
 {
-    public enum NivoPristupa { zelena, zuta, plava, crvena, zlatna }
+    public enum NivoPristupa { zelena, zuta, crvena }
 
     public class Uposlenik
     {

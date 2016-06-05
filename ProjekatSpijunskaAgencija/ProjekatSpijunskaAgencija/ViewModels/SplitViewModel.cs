@@ -16,7 +16,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
     {
         private bool isPaneOpen;
         public bool IsPaneOpen { get { return isPaneOpen; } set { isPaneOpen = value; NotifyPropertyChanged("IsPaneOpen"); NotifyPropertyChanged("SplitViewModel"); } }
-        public NavigationService NavigationService { get; set; }
+        public INavigationService NavigationService { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)
@@ -68,6 +68,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         }
         public SplitViewModel()
         {
+            NavigationService = new NavigationService();
             this.Setup();
         }
         public SplitViewModel(NavigationService navService)

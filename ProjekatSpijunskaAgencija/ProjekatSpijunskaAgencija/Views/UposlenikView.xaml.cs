@@ -37,6 +37,7 @@ namespace ProjekatSpijunskaAgencija.Views
         {
             Loaded += delegate { Focus(FocusState.Programmatic); };
             DataContext = (UposlenikViewModel)e.Parameter;
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
     }
 }

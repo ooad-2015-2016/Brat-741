@@ -51,6 +51,22 @@ Ovo polje je predviđeno za unos e-maila.
 
 Polje gdje upisujete vaš broj telefona.
 
+##### **Forma za podnošenje izvještaja**
+
+Trenutna (demo) verzija forme za podnoešenje izvještaja se sadrži od informacije o stanju budžeta
+sa kojim agenti raspolažu na misiji i njihove trenutne lokacije.
+
+###### Stanje budžeta
+
+U textbox se unosi trenutno stanje budžeta. Ova informacija pomaže Direktoru i Menadžeru da znaju
+da li je misija prevazišla predviđena sredstva.
+
+###### Dobavi lokaciju
+
+Klikom na ovu opciju će vam u poljima za Longitude i Latitude biti ispisane vaše tačne geografske 
+koordinate i na mapi će vaša lokacija biti pingovana tako da Direktor može poslati tim za evakuaciju
+ako dođe do nenadanih smetnji tokom misije.
+
 ##### **Forma za konektovanje sa Arduinom**
 
 ###### Connection Method

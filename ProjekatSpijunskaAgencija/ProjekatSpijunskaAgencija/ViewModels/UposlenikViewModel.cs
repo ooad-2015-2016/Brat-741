@@ -84,7 +84,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
                 {
                     ime = "Test",
                     prezime = "Pls Work",
-                    email = "@Cigra.kralj",
+                    email = "Amar@Cigra.kralj",
                     brojTel = "3456"
                 }
             };

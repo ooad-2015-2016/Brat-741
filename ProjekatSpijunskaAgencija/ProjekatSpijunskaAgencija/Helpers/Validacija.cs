@@ -13,7 +13,7 @@ namespace ProjekatSpijunskaAgencija.Helpers
         {
             if (ime == null) return false;
             foreach(var x in ime)
-                if (!(Char.IsLetter(x)) || x==' ') return false;
+                if (!(Char.IsLetter(x) || x==' ')) return false;
             return true;
         }
         public static bool Broj(string ime)

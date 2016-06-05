@@ -48,7 +48,7 @@ namespace ProjekatSpijunskaAgencija.Views
             if (e.Key == Windows.System.VirtualKey.Enter) dcontext.login_Click(sender);
         }
 
-        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        private void otvoriConnection_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(ConnectionPage));
         }

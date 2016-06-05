@@ -91,11 +91,11 @@ namespace ProjekatSpijunskaAgencija.ViewModels
         }
         public void externi()
         {
-           // if (App.Arduino != null)
+            //if (App.Arduino != null)
             {
-                App.Arduino.digitalWrite(3, (((int)(uposlenik.nivoPristupa)) < 1) ? PinState.HIGH : PinState.LOW);
+                App.Arduino.digitalWrite(3, (((int)(uposlenik.nivoPristupa)) < 3) ? PinState.HIGH : PinState.LOW);
                 App.Arduino.digitalWrite(4, (((int)(uposlenik.nivoPristupa)) < 2) ? PinState.HIGH : PinState.LOW);
-                App.Arduino.digitalWrite(5, (((int)(uposlenik.nivoPristupa)) < 3) ? PinState.HIGH : PinState.LOW);
+                App.Arduino.digitalWrite(5, (((int)(uposlenik.nivoPristupa)) < 1) ? PinState.HIGH : PinState.LOW);
             }
         }
         public void analizirajIzvjestaj(object parameter)

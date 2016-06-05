@@ -62,5 +62,7 @@
                 <Button x:Uid="Cancel" Margin="0,0,10,0" x:Name="CancelButton" Click="CancelButton_Click" IsEnabled="False">Cancel</Button>
                 <Button x:Uid="RefreshBtn" Margin="0,0,10,0" x:Name="RefreshButton" Click="RefreshButton_Click">Refresh</Button>
             </StackPanel>
+        <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="300,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25" Click="Help_Click"/>
+
     </Grid>
 </Page>

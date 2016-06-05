@@ -18,6 +18,7 @@ using Microsoft.Maker.RemoteWiring;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using System.Threading;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -363,6 +364,16 @@ namespace ProjekatSpijunskaAgencija.Views
             cancelTokenSource = null;
 
             SetUiEnabled(true);
+        }
+
+        private async void Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Connection Method"
++"U ovoj padajućoj listi možete izabrati između 3 vrste konekcije Arduino uređaja sa vašim uređajem.Postoje tri opcije:\nBluethoot konekcija"+
+"\nUSB konekcija"+
+"\nNetwork konekcija"+
+"\nPošto je ovo demo verzija aplikacije, trenutno je funkcionalna samo USB konekcija Arduina.Izabirom ove opcije aplikacija sama automatski određuje na koji USB port je priključen Arduino i daje korisniku kontrolu nad uređajem.");
+            await md.ShowAsync();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -35,6 +36,12 @@ namespace ProjekatSpijunskaAgencija.Views
             Loaded += delegate { Focus(FocusState.Programmatic); };
             DataContext = (KontaktViewModel)e.Parameter;
             NavigationCacheMode = NavigationCacheMode.Required;
+        }
+
+        private async void Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Forma za Kontakt\nIme i prezime U ova polja unosite vaše ime i prezime.\ne - mail Ovo polje je predviđeno za unos e - maila.\nBroj telefona Polje gdje upisujete vaš broj telefona.");
+            await md.ShowAsync();
         }
     }
 }

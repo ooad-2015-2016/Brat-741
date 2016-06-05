@@ -35,7 +35,7 @@
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}" Background="#33040404"/>
         <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}" Background="#33000000"/>
         <Button x:Name="button" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,280,0,0" VerticalAlignment="Top" Width="96" Background="#33000000" Command="{Binding NoviKlijent}"/>
-        <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="340,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25"/>
+        <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="300,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25" Click="Help_Click"/>
         <Button x:Name="otvoriConnection" Content="Arduino" HorizontalAlignment="Left" Height="33" Margin="234,332,0,0" VerticalAlignment="Top" Width="96" Background="#33000000" Click="otvoriConnection_Click"/>
     </Grid>
 </Page>

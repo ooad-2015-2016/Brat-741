@@ -60,9 +60,11 @@
                         </StackPanel>
                     </SplitView.Pane>
                 </SplitView>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nadgledajte postojece timove" VerticalAlignment="Top" Margin="61,25,0,0"/>
+
             </Grid>
         </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="White">
 
         </Grid>
     </Grid>

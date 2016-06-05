@@ -106,10 +106,22 @@ namespace ProjekatSpijunskaAgencija.DataSource
         public async static void ucitajPodatke()
         {
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            Windows.Storage.StorageFile uposlenici = await storageFolder.CreateFileAsync("uposlenici.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
 
-            string json = await Windows.Storage.FileIO.ReadTextAsync(uposlenici);
-            _uposlenici = JsonConvert.DeserializeObject<List<Uposlenik>>(json);
+            Windows.Storage.StorageFile uposlenici = await storageFolder.CreateFileAsync("uposlenici.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile misije = await storageFolder.CreateFileAsync("misije.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile resursi = await storageFolder.CreateFileAsync("resursi.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile timovi = await storageFolder.CreateFileAsync("timovi.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+
+            string misijejson = await Windows.Storage.FileIO.ReadTextAsync(misije);
+            string resursijson = await Windows.Storage.FileIO.ReadTextAsync(resursi);
+            string timovijson = await Windows.Storage.FileIO.ReadTextAsync(timovi);
+            string uposlenicijson = await Windows.Storage.FileIO.ReadTextAsync(uposlenici);
+
+            _uposlenici = JsonConvert.DeserializeObject<List<Uposlenik>>(uposlenicijson);
+            _misije = JsonConvert.DeserializeObject<List<Misija>>(misijejson);
+            _resursi = JsonConvert.DeserializeObject<List<Oprema>>(resursijson);
+            _timovi = JsonConvert.DeserializeObject<List<Tim>>(timovijson);
+
             MessageDialog md = new MessageDialog(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
             await md.ShowAsync();
             //var nd = new MessageDialog(json);
@@ -117,13 +129,24 @@ namespace ProjekatSpijunskaAgencija.DataSource
         }
         public async static void zapisiPodatke()
         {
-            string json = JsonConvert.SerializeObject(_uposlenici);
+            string uposlenicijson = JsonConvert.SerializeObject(_uposlenici);
+            string misijejson = JsonConvert.SerializeObject(_misije);
+            string resursijson = JsonConvert.SerializeObject(_resursi);
+            string timovijson = JsonConvert.SerializeObject(_timovi);
+
+
             Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             MessageDialog md = new MessageDialog(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
             await md.ShowAsync();
             Windows.Storage.StorageFile uposlenici = await storageFolder.CreateFileAsync("uposlenici.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile misije = await storageFolder.CreateFileAsync("misije.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile resursi = await storageFolder.CreateFileAsync("resursi.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            Windows.Storage.StorageFile timovi = await storageFolder.CreateFileAsync("timovi.json", Windows.Storage.CreationCollisionOption.OpenIfExists);
 
-            await Windows.Storage.FileIO.WriteTextAsync(uposlenici, json);
+            await Windows.Storage.FileIO.WriteTextAsync(uposlenici, uposlenicijson);
+            await Windows.Storage.FileIO.WriteTextAsync(misije, misijejson);
+            await Windows.Storage.FileIO.WriteTextAsync(resursi, resursijson);
+            await Windows.Storage.FileIO.WriteTextAsync(timovi, timovijson);
         }
         public static Misija vratiMisiju(string hashID)
         {

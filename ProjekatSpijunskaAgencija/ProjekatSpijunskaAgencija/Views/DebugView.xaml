@@ -8,62 +8,15 @@
     mc:Ignorable="d">
 
     <Grid Background="White" x:Name="MainGrid" ScrollViewer.VerticalScrollBarVisibility="Auto">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="WideState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="MainGrid.Margin" Value="0"/>
-                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="auto"/>
-                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="*"/>
-                        <Setter Target="FirstGrid.Margin" Value="0 0 0 0"/>
-                        <Setter Target="SecondGrid.Margin" Value="0 0 0 0"/>
-                        <Setter Target="SecondGrid.(Grid.Column)" Value="1"/>
-                        <Setter Target="SecondGrid.(Grid.Row)" Value="0"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="NarrowState">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="MainGrid.Margin" Value="0"/>
-                        <Setter Target="FirstGrid.Margin" Value="0 0 0 0"/>
-                        <Setter Target="SecondGrid.Margin" Value="0 0 0 0"/>
-                        <Setter Target="MainGrid.RowDefinitions[1].Height" Value="*"/>
-                        <Setter Target="MainGrid.ColumnDefinitions[1].Width" Value="auto"/>
-                        <Setter Target="SecondGrid.(Grid.Column)" Value="0"/>
-                        <Setter Target="SecondGrid.(Grid.Row)" Value="1"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <ScrollViewer>
-            <Grid x:Name="FirstGrid" Grid.Column="0">
-                <SplitView x:Name="SplitView" Style="{ThemeResource SplitViewMoj}" IsPaneOpen = "{Binding Split.IsPaneOpen, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
-                    <SplitView.Pane>
-                        <StackPanel x:Name="SplitViewPanePanel">
-                            <RadioButton x:Name="BackRadioButton" Command="{Binding Split.Back}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE112;" Background ="Green" Content="Back" GroupName="Back"/>
-                            <RadioButton x:Name="HamburgerRadioButton" Command="{Binding Split.Hamburger}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
-                            <RadioButton x:Name="HomeRadioButton" Command="{Binding Split.Home}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                            <RadioButton x:Name="FriendsRadioButton" Command="{Binding Split.Friends}" Style="{ThemeResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
-                        </StackPanel>
-                    </SplitView.Pane>
-                </SplitView>
-            </Grid>
-        </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
-
-        </Grid>
+        <Button x:Name="button" Content="DirektorView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,120,0,0" Height="40" Width="120"/>
+        <Button x:Name="button1" Content="IzvjestajView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,200,0,0" Height="40" Width="120"/>
+        <Button x:Name="button2" Content="KlijentView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,280,0,0" Height="40" Width="120"/>
+        <Button x:Name="button3" Content="KontaktView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,360,0,0" Height="40" Width="120"/>
+        <Button x:Name="button4" Content="LoginView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,440,0,0" Height="40" Width="120"/>
+        <Button x:Name="button5" Content="MenadzerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,120,0,0" Height="40" Width="120"/>
+        <Button x:Name="button6" Content="MisijaView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,200,0,0" Height="40" Width="120"/>
+        <Button x:Name="button7" Content="TimView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,280,0,0" Height="40" Width="120"/>
+        <Button x:Name="button8" Content="UposlenikView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,360,0,0" Height="40" Width="120"/>
+        <Button x:Name="button9" Content="ConnectionPage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,440,0,0" Height="40" Width="120"/>
     </Grid>
 </Page>

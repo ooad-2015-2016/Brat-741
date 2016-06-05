@@ -21,6 +21,7 @@
                 </StackPanel>
             </SplitView.Pane>
             
+
         </SplitView>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="33" Margin="75,80,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="96"/>
         <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Height="33" Margin="75,130,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="96"/>
@@ -33,7 +34,7 @@
                  PlaceholderText="********"  VerticalAlignment="Top" Height="33" Width="127" KeyDown="txtPassword_KeyDown"/>
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Height="33" Margin="234,180,0,0" VerticalAlignment="Top" Width="96" Command="{Binding LoginClick}" Background="#33040404"/>
         <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Height="33" Margin="234,230,0,0" VerticalAlignment="Top" Width="96" Command="{Binding RegisterClick}" Background="#33000000"/>
-        <Button x:Name="button" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,280,0,0" VerticalAlignment="Top" Width="96" Background="#33000000"/>
-        <Button x:Name="button_Copy" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,330,0,0" VerticalAlignment="Top" Width="96" Background="#33000000" Click="button_Copy_Click"/>
+        <Button x:Name="button" Content="Novi klijent" HorizontalAlignment="Left" Height="33" Margin="234,280,0,0" VerticalAlignment="Top" Width="96" Background="#33000000" Command="{Binding NoviKlijent}"/>
+        <Button x:Name="Help" FontFamily="Segoe MDL2 Assets" Content="" HorizontalAlignment="Left" Height="40" Margin="340,20,0,0" VerticalAlignment="Top" Width="40" Background="#336E6400" RenderTransformOrigin="1,0.25"/>
     </Grid>
 </Page>

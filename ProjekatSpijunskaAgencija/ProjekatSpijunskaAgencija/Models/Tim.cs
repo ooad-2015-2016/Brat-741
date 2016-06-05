@@ -38,7 +38,10 @@ namespace ProjekatSpijunskaAgencija.Models
         public Tim()
         {
         }
-
+        public override string ToString()
+        {
+            return "Index00x: " + index00x + ", vodja tima: " + clanovi.Last<Agent>().ToString();
+        }
         public Tim(Agent00x agent)
         {
             index00x = agent.x;

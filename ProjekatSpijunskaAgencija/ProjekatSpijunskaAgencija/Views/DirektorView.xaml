@@ -62,23 +62,21 @@
                 <TextBlock x:Name="textBlock" Text="{Binding NazivAgencije, Mode=OneTime}" Style="{ThemeResource BaseTextBlockStyle}" Margin="80,40,0,0" Width="120"/>
                 <Button x:Name="btnKontakt" Content="O Vama" Command ="{Binding KontaktInfo}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,40,0,0" Height="40" Width="120"/>
                 <Button x:Name="btnUposlenici" Content="Uposlenici" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,100,0,0" Height="40" Width="120"/>
-                <Button x:Name="btnIzvjestaji" Content="Izvjestaji" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,160,0,0" Height="40" Width="120"/>
-                <Button x:Name="btnMisije" Content="Misije" Command ="{Binding PrikaziUposlenike}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,220,0,0" Height="40" Width="120"/>
+                <Button x:Name="btnIzvjestaji" Content="Izvjestaji" Command ="{Binding PrikaziIzvjestaje}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,160,0,0" Height="40" Width="120"/>
+                <Button x:Name="btnMisije" Content="Misije" Command ="{Binding PrikaziMisije}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,220,0,0" Height="40" Width="120"/>
 
             </Grid>
         </ScrollViewer>
-        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="CadetBlue">
+        <Grid x:Name="SecondGrid" Grid.Column="1" Grid.Row="0" Background="LightGray">
             <ListView
                 x:Name="listView"
+                Header="Lista objekata:"
                 HorizontalAlignment="Left"
-                Height="640"
+                Height="600"
                 VerticalAlignment="Top"
                 Width="513"
-                Margin="0,0,0,0"
-                ItemsSource="{Binding TrenutnaLista}"/>
-            <ListViewItem>
-                
-            </ListViewItem>
+                Margin="0,40,0,0"
+                ItemsSource="{Binding TrenutnaLista, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </Page>

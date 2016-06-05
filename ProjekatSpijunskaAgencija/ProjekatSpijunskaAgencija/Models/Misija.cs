@@ -18,6 +18,10 @@ namespace ProjekatSpijunskaAgencija.Models
         {
 
         }
+        public override string ToString()
+        {
+            return "Prva meta: " + mete.First<Meta>() + ", budzet: " + budzet + ", zadnji izvjestaj: " + izvjestaji.Last<Izvjestaj>() + ", Radna Grupa: " + radnaGrupa.ToString() + ", Hash ID: " + hashID;
+        }
         public Misija()
         {
 

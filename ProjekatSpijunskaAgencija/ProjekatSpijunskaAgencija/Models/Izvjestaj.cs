@@ -14,5 +14,9 @@ namespace ProjekatSpijunskaAgencija.Models
         public string opis { get; set; }
         public BasicGeoposition pozicija { set; get; }
 
+        public override string ToString()
+        {
+            return "Datum Kreiranja: " + datumKreiranja.ToString() + ", StanjeBudzeta: " + stanjeBudzeta + ", Opis: " + opis + ", Pozicija: " + pozicija;
+        }
     }
 }

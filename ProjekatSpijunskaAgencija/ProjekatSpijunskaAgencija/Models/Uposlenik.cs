@@ -15,7 +15,10 @@ namespace ProjekatSpijunskaAgencija.Models
         public string sifra { get; set; }
         public Contact kontaktInfo { get; set; }
         #endregion
-
+        public override string ToString()
+        {
+            return "Username: " + username + ", Password: " + sifra + ", Ime: " + kontaktInfo.ime + ", Prezime: " + kontaktInfo.prezime + ", ID: " + idBroj;
+        }
         #region Atributi koje popunjava direktor/menadzer i sistem
         public int idBroj { get; set; }
 

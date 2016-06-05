@@ -17,7 +17,7 @@ namespace ProjekatSpijunskaAgencija.Models
                 if (Helpers.Validacija.ImePrezime(value))
                     _ime = value;
                 else
-                    _ime = "";
+                    _ime = "Bad Ime";
             }
         }
         public string prezime
@@ -28,7 +28,7 @@ namespace ProjekatSpijunskaAgencija.Models
                 if (Helpers.Validacija.ImePrezime(value))
                     _prezime = value;
                 else
-                    _prezime = "";
+                    _prezime = "Bad Prezime";
             }
         }
         public string email
@@ -39,7 +39,7 @@ namespace ProjekatSpijunskaAgencija.Models
                 if (Helpers.Validacija.Email(value))
                     _email = value;
                 else
-                    _email = "";
+                    _email = "Bad Email";
             }
         }
         public string brojTel
@@ -50,7 +50,7 @@ namespace ProjekatSpijunskaAgencija.Models
                 if (Helpers.Validacija.Broj(value))
                     _brojTel = value;
                 else
-                    _brojTel = "";
+                    _brojTel = "Bad Broj";
             }
         }
 

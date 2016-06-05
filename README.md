@@ -21,6 +21,66 @@ Ovaj sistem nije na prodaju, a i sumnjamo da možete priuštiti naše usluge.
 
 Ova poruka će se samouništiti nakon 1.5 godina.
 
+#### **Help**
+
+##### **Forma za Login**
+
+###### Username and Password
+
+U ova polja unosite ime vašeg korisničkog naloga i šifru koju ste napravili. Šifra mora sadržavati
+minimalno sedam karaktera. Ako ste novi radnik (tj. niste registrovani u bazu) klikom na Login dugme
+bit ćete prebačeni na formu za registraciju gdje će te morati popuniti osnovne podatke o sebi.
+
+###### Novi klijent
+
+Ovu opciju možete izabrati ako želite naručiti novu misiju. Klikom na dugme "Novi klijent" bivate
+prebačeni na novu formu za naručivanje misije gdje popunjavate pojedinosti o meti i način izvršavanja
+misije.
+
+##### **Forma za Kontakt**
+ 
+###### Ime i prezime
+
+U ova polja unosite vaše ime i prezime.
+
+###### e-mail
+
+Ovo polje je predviđeno za unos e-maila.
+
+###### Broj telefona
+
+Polje gdje upisujete vaš broj telefona.
+
+##### **Forma za konektovanje sa Arduinom**
+
+###### Connection Method
+
+U ovoj padajućoj listi možete izabrati između 3 vrste konekcije Arduino uređaja sa vašim uređajem.
+Postoje tri opcije:
+- Bluethoot konekcija
+- USB konekcija
+- Network konekcija
+
+Pošto je ovo demo verzija aplikacije, trenutno je funkcionalna samo USB konekcija Arduina.
+Izabirom ove opcije aplikacija sama automatski određuje na koji USB port je priključen Arduino
+i daje korisniku kontrolu nad uređajem.
+
+##### **Forma za Direktora**
+
+###### Uposlenici
+
+Klikom na ovo dugme možete da pratite aktivnosti svih uposlenika agencije.
+
+###### Izvještaji
+
+Ova opcija vam pruža uvid u izvještaje koje Vam je Menadžer poslao. Pristupate bazi podataka sa
+izvještajima sa svih misija.
+
+###### Misije
+
+Izabirom ove opcije pristupate bazi podataka svih misija gdje možete pratiti stanje tekućih misija
+i po potrebi neke terminirati. Također možete pristupiti podacima već završenih i arhiviranih misija.
+
 #### **Procesi**
 
 ###### **Kreiranje misije**

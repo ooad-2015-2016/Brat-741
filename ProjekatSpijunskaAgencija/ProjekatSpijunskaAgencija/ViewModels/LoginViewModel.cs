@@ -63,7 +63,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
 
             if (DataSourceSA.dajBrojUposlenika() == 0)
             {
-                MessageDialog mdialog = new MessageDialog("Vi ste prvi korisnik programa, te mozete kreirati novu Spijunsku Agenciju.");
+                MessageDialog mdialog = new MessageDialog("Vi ste prvi korisnik programa, te možete kreirati novu Špijunsku Agenciju.");
                 await mdialog.ShowAsync();
                 Direktor direktor = new Direktor()
                 {
@@ -78,7 +78,7 @@ namespace ProjekatSpijunskaAgencija.ViewModels
             {
                 if (!dialogOn)
                 {
-                    MessageDialog dialog = new MessageDialog("Zdravo uposlenik broj " + uposlenik.idBroj);
+                    MessageDialog dialog = new MessageDialog("Zdravo, uposlenik broj " + uposlenik.idBroj);
                     dialogOn = true;
                     await dialog.ShowAsync();
                     dialogOn = false;

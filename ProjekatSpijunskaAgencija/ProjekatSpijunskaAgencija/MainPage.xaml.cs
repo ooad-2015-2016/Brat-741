@@ -23,8 +23,6 @@ namespace ProjekatSpijunskaAgencija
     public sealed partial class MainPage : Page
     {
         public MainPage()
-        {
-            this.InitializeComponent();
-        }
+        {this.InitializeComponent();}
     }
 }

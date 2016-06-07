@@ -1,0 +1,24 @@
+Izvještaj rada
+Projektni tim BRAT-741	Ime i prezime	Uloga
+	Amar Čivgin	Vođa tima
+	Rijad Muminović	Član
+	Besim Arnautović	Član
+	Tarik Pljevljaković	Član
+
+Izvještaj o aktivnostima:
+Red. br.	Aktivnost	Učesnici	Datum, vrijeme	Napomena
+1	Projektni zadatak 1	Svi članovi	29.02.2016., 00:30	Pravljenje .txt
+2	Pravljenje Readme-a	Svi članovi	29.02.2016., 01:00	Opis i uputa
+3	Use-case	Svi članovi	06.03.2016., 01:20	Dio PZ2
+4	Dijagram aktivnosti	Svi članovi	15.03.2016., 02:00	Dio PZ2
+5	Dodatni dijagrami akt.	Svi članovi	22.03.2016., 02:00	/
+6	Dodane .xaml skice/forme 	Rijad, Amar	22.03.2016., 01:45	PZ4
+7	Dijagram klasa i opis	Svi članovi	27.03.2016., 02:25	/
+8	SOLID principi	Svi članovi	26.04.2016., 01:30	Opis
+9	Ispravke dijagrama klasa	Amar	10.05.2016., 01:30	SOLID
+10	MVVM	Tarik	10.05.2016., 01:00	/
+11	4 dizajn paterna	Svi članovi	20.05.2016., 02:30	/
+12	Dijagrami sekvenci	Rijad, Besim	25.05.2016., 02:30	/
+13	Dijagrami iz PZ9	Tarik	30.05.2016., 03:00	/
+14	Kodiranje	Svi članovi	05.06.2016., 14:00	/
+15	GPS i Arduino	Amar, Rijad	05.06.2016., 06:00	/
